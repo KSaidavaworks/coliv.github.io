@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CoLiv | Product Impact Passport</title>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#efeeeb",
+                    "on-primary-fixed": "#0d1f16",
+                    "surface-container-highest": "#e4e2df",
+                    "inverse-surface": "#30312f",
+                    "surface": "#fbf9f6",
+                    "on-tertiary-fixed": "#2f140f",
+                    "surface-variant": "#e4e2df",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#ffdad4",
+                    "surface-container-high": "#eae8e5",
+                    "on-surface-variant": "#424845",
+                    "primary-container": "#8ea396",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#edbbb2",
+                    "on-secondary-fixed-variant": "#55451e",
+                    "surface-bright": "#fbf9f6",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#c2938b",
+                    "background": "#fbf9f6",
+                    "on-secondary-container": "#736037",
+                    "primary-fixed-dim": "#b6ccbd",
+                    "on-background": "#1b1c1a",
+                    "primary-fixed": "#d2e8d9",
+                    "secondary-fixed-dim": "#dcc492",
+                    "on-primary-container": "#27392f",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#4d2d27",
+                    "outline": "#727875",
+                    "on-secondary-fixed": "#251a00",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f2f0ed",
+                    "surface-container-low": "#f5f3f0",
+                    "secondary": "#4C5C2D",
+                    "surface-dim": "#dbdad7",
+                    "on-surface": "#1b1c1a",
+                    "on-primary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#b6ccbd",
+                    "primary": "#6A7E3F",
+                    "outline-variant": "#c2c8c4",
+                    "on-tertiary-fixed-variant": "#613e37",
+                    "surface-tint": "#4f6357",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#f6dda9",
+                    "secondary-fixed": "#f9e0ac",
+                    "on-primary-fixed-variant": "#384b40",
+                    "tertiary": "#D96868",
+                    "emerald": {
+                        "900": "#4C5C2D",
+                        "800": "#4C5C2D",
+                        "700": "#6A7E3F",
+                        "600": "#6A7E3F",
+                        "500": "#6A7E3F",
+                        "400": "#6A7E3F",
+                        "300": "#FBF6F6",
+                        "200": "#FBF6F6",
+                        "100": "#FBF6F6",
+                        "50": "#FBF6F6"
+                    }
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader", "serif"],
+                    "display": ["Newsreader", "serif"],
+                    "body": ["Manrope", "sans-serif"],
+                    "label": ["Manrope", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #fbf9f6; color: #1b1c1a; }
+        .font-serif { font-family: 'Newsreader', serif; }
+        .glass { background: rgba(251, 249, 246, 0.7); backdrop-filter: blur(32px); }
+        .ghost-border { border: 1px solid rgba(194, 200, 196, 0.15); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #d2e8d9; border-radius: 10px; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-stone-50/70 backdrop-blur-xl border-b border-stone-200/15 flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto left-1/2 -translate-x-1/2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-900">nature_people</span>
+<span class="text-2xl font-serif italic text-emerald-900">CoLiv</span>
+</div>
+<div class="hidden md:flex gap-10 items-center">
+<a class="text-emerald-900 font-semibold border-b border-emerald-900/40 font-sans tracking-wide" href="#">Products</a>
+<a class="text-stone-500 font-medium hover:text-emerald-700 transition-colors duration-300 font-sans tracking-wide" href="#">Brands</a>
+<a class="text-stone-500 font-medium hover:text-emerald-700 transition-colors duration-300 font-sans tracking-wide" href="#">Sustainability</a>
+<a class="text-stone-500 font-medium hover:text-emerald-700 transition-colors duration-300 font-sans tracking-wide" href="#">About</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all">search</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all">shopping_bag</button>
+</div>
+</nav>
+<main class="pt-24 pb-20">
+<!-- Hero: Product Overview -->
+<section class="max-w-screen-2xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+<!-- Image Gallery (Asymmetric) -->
+<div class="lg:col-span-7 grid grid-cols-2 gap-4">
+<div class="col-span-2 overflow-hidden rounded-xl aspect-[4/5]">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" data-alt="A cinematic, high-fashion editorial photograph of a heavy, textured organic cotton lounge set draped over a minimalist stone bench. Soft, warm natural sunlight streams through a large window, creating deep, artistic shadows and highlighting the tactile, weave-like texture of the fabric. The setting is a serene, airy ivory room with a single dried branch in a ceramic vase, embodying a luxurious sanctuary aesthetic with sage green and earth-toned accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOWKVaa6aQ1metc6RDVxcQMJ_wlnjNVwAdvH6zRzEbd353vd5dJ883p3peHIFsB0V9YwkOdwhGIuZp7sybW4Cs7uncnf_fl2fKfUs5KtlX46a0nqj3tkPH1vC3VcqWbHk9z7N9K88Ud1VdJzFluT0t7_KV_mmMHMitLI3AEqG_Kqcg7WGtvPP50iVZiXdd5uVipAvJrNRFsup4yZOF4klbWMzwLSmrv98lUh5rU2jg5dQhncGsEKLWggWQKBltgFtZ44Kbj2mbygAH"/>
+</div>
+<div class="overflow-hidden rounded-xl aspect-square">
+<img class="w-full h-full object-cover" data-alt="A close-up, macro shot focusing on the intricate stitching and raw texture of natural, undyed organic cotton fibers. The lighting is soft and diffuse, emphasizing the purity and sustainability of the material. A subtle, blurred background of ivory and sage green creates a sense of organic depth and premium quality, aligning with the sanctuary theme of the CoLiv brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiAz50vSrI3n-gqUd2DOF1bWexwj2am2iSLFDT_SDoN0fnfl_Uw2q-i7jinZ6rDvtf_MgxcqRjGuEACq18xDTlthXsoYwWkayoOUD97pHNdhB0f5nxh1kHYlTmndix2AG-lEuU7Eqg0TRY7gaIsorY4aMP5YT5HYvBMzPstS-J9ETGJ4s1cubcPuN4Jveqe7eyAZHMUTfSknvGND5yE1Id77ACyJoCFpCGQ5NaBRpJ42MET-4I-M-nl35TxTEq9-vgPsrtOxdtpciQ"/>
+</div>
+<div class="overflow-hidden rounded-xl aspect-square">
+<img class="w-full h-full object-cover" data-alt="A lifestyle shot of the product packaging: a minimal, recycled cardboard box with subtle embossed CoLiv branding. Beside the box, a sprig of fresh sage rests on a textured paper surface. The scene is bathed in clean, bright light, conveying a sense of transparency and plastic-free elegance. The color palette is restricted to ivory, soft brown, and muted greens." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJvgSA7ghIIQMSAgbsLorSxS56UWTl96l_AdJTRM3bgZ8d-PsPIWxrow10FODGRK6hfr59UIiaGlscS5eN6VYMnKrUSBB3nY-X8J17LcF8WukRsae1dtPsIyvkVASGchlSisgTRORjTfopRKi_lE4bUWWJHd28ywjniNc2W70Vo9n8PIWYqVXWvakEPFqFjKYoLkunrHgVPWN6Em7pSDSM4zPyYq0vHxsL_Zl0eXMnxOCyVmJFcDQea5BysM3Xsk7RXuJibdY_1sa0"/>
+</div>
+</div>
+<!-- Product Details -->
+<div class="lg:col-span-5 lg:sticky lg:top-32">
+<div class="flex items-center gap-2 mb-4">
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed text-[10px] font-bold tracking-widest uppercase rounded-full">New Arrival</span>
+<span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold tracking-widest uppercase rounded-full">Organic</span>
+</div>
+<h1 class="text-6xl font-serif italic text-on-surface mb-4 leading-tight">The Heritage Lounge Set</h1>
+<p class="text-2xl font-body text-secondary mb-8">$285.00</p>
+<p class="text-body-lg text-on-surface-variant leading-relaxed mb-10 font-light">
+                    Crafted for the conscious soul, our Heritage Set is more than apparel—it is an architectural layer for the body. Using exclusively long-staple organic cotton, it offers a tactile experience that evolves with you, designed to exist within your sanctuary for decades.
+                </p>
+<div class="space-y-6 mb-12">
+<div>
+<span class="block text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-3">Color: Sage Earth</span>
+<div class="flex gap-3">
+<button class="w-10 h-10 rounded-full border-2 border-primary p-0.5"><div class="w-full h-full bg-[#4f6357] rounded-full"></div></button>
+<button class="w-10 h-10 rounded-full border border-outline-variant p-0.5"><div class="w-full h-full bg-[#f2f0ed] rounded-full"></div></button>
+<button class="w-10 h-10 rounded-full border border-outline-variant p-0.5"><div class="w-full h-full bg-[#7c554e] rounded-full"></div></button>
+</div>
+</div>
+<div>
+<span class="block text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-3">Select Size</span>
+<div class="flex gap-3">
+<button class="px-5 py-3 rounded-xl bg-surface-container-low hover:bg-primary-fixed transition-colors">XS</button>
+<button class="px-5 py-3 rounded-xl bg-surface-container-low hover:bg-primary-fixed transition-colors">S</button>
+<button class="px-5 py-3 rounded-xl border border-primary bg-primary-fixed font-bold">M</button>
+<button class="px-5 py-3 rounded-xl bg-surface-container-low hover:bg-primary-fixed transition-colors">L</button>
+<button class="px-5 py-3 rounded-xl bg-surface-container-low hover:bg-primary-fixed transition-colors">XL</button>
+</div>
+</div>
+</div>
+<button class="w-full py-5 bg-primary text-on-primary rounded-full text-lg font-semibold hover:bg-primary-container transition-all duration-300 flex justify-center items-center gap-3">
+                    Add to Sanctuary Bag
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<div class="mt-8 grid grid-cols-2 gap-4">
+<div class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">local_shipping</span>
+                        Carbon-Neutral Shipping
+                    </div>
+<div class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">eco</span>
+                        100% Biodegradable
+                    </div>
+</div>
+</div>
+</section>
+<!-- Impact Passport Section -->
+<section class="mt-32 relative overflow-hidden bg-surface-container-low py-32">
+<!-- Background Decorative Blobs -->
+<div class="absolute -top-64 -left-64 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px]"></div>
+<div class="absolute -bottom-64 -right-64 w-[600px] h-[600px] bg-tertiary/5 rounded-full blur-[120px]"></div>
+<div class="max-w-screen-2xl mx-auto px-8 relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-2xl">
+<h2 class="text-xs font-bold tracking-[0.3em] uppercase text-primary mb-6">Transparency Report</h2>
+<h3 class="text-6xl font-serif italic text-emerald-900 leading-none">The Impact Passport</h3>
+<p class="mt-8 text-xl text-on-surface-variant font-light">Every thread has a history. We track the journey of your garment from seed to sanctuary, ensuring every hand it touches is treated with dignity.</p>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-[2.5rem] flex flex-col items-center text-center shadow-sm">
+<span class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-2">Consciousness Score</span>
+<div class="relative w-32 h-32 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container-highest" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-dasharray="364.4" stroke-dashoffset="21.8" stroke-width="8"></circle>
+</svg>
+<span class="absolute text-3xl font-serif italic text-primary">94</span>
+</div>
+<p class="mt-4 text-[10px] tracking-widest uppercase text-on-surface-variant">Top 2% of Industry</p>
+</div>
+</div>
+<!-- Bento Grid Impact Cards -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="md:col-span-2 bg-surface-container-lowest p-10 rounded-3xl group hover:bg-primary/5 transition-colors cursor-default">
+<span class="material-symbols-outlined text-4xl text-primary mb-8" style="font-variation-settings: 'FILL' 1;">eco</span>
+<h4 class="text-2xl font-serif italic mb-4">Material Architecture</h4>
+<p class="text-on-surface-variant font-light leading-relaxed mb-6">100% GOTS-certified Organic Cotton sourced from regenerative farms in Turkey. No synthetic pesticides, 91% less water usage than conventional cotton.</p>
+<div class="h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[98%]"></div>
+</div>
+<div class="flex justify-between mt-2 text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">
+<span>Purity</span>
+<span>98%</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-3xl">
+<span class="material-symbols-outlined text-4xl text-secondary mb-8">co2</span>
+<h4 class="text-2xl font-serif italic mb-4">Carbon Footprint</h4>
+<p class="text-on-surface-variant text-sm font-light leading-relaxed">2.4kg CO2e total lifecycle impact. Offset 110% through Himalayan reforestation projects.</p>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-3xl">
+<span class="material-symbols-outlined text-4xl text-tertiary mb-8">package_2</span>
+<h4 class="text-2xl font-serif italic mb-4">Zero Plastic</h4>
+<p class="text-on-surface-variant text-sm font-light leading-relaxed">Mushroom-based compostable mailers and recycled soy-ink silk paper tags.</p>
+</div>
+<div class="md:col-span-4 bg-surface-container-lowest p-10 rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div>
+<span class="material-symbols-outlined text-4xl text-primary mb-6">factory</span>
+<h4 class="text-3xl font-serif italic mb-4">Ethical Manufacturing</h4>
+<p class="text-on-surface-variant font-light leading-relaxed">Produced in a Fair Trade certified facility in Northern Portugal. Workers receive 140% of the local living wage and have access to on-site childcare.</p>
+</div>
+<div class="overflow-hidden rounded-2xl h-48">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist wide shot of a modern sustainable garment factory in Portugal. Large windows let in soft morning light onto tidy wooden work surfaces and energy-efficient machinery. Artisans in neutral-toned clothing are seen focused on their craft, creating a sense of calm, dignified labor. The aesthetic is bright, airy, and professional, reflecting the ethical and high-quality manufacturing values of CoLiv." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMvPQrhymNjZqm4fK_TTyyFnOCLt-xLXVOYqnB214Y65gr704gXvXr-aGHjztYqns8f8qtOb3R32EGyAwyoVqHTytqCmZ_IgW5H8FVdfjaPL9H0-rD94Fz8ho1-EAHGPc_T4nDAgD-ZAVi25W0WVY-57TX_9Omt01NgP60IB_W46ECIaf6ZavysZ9JpyUIVKZJaEn6TEA8U4DcVhNvfVhw_zP7c4D5JBLG9AIq4Q0RGGTQeJAH9yWcGe6uvMfvU29Ef43WKh05yhxt"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Brand Story -->
+<section class="py-32 max-w-screen-2xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div class="relative">
+<div class="absolute -z-10 top-12 -left-12 w-full h-full bg-surface-container-high rounded-xl"></div>
+<img class="w-full aspect-[3/4] object-cover rounded-xl shadow-lg" data-alt="An artistic, black and white portrait of a woman in her late 30s, the founder of CoLiv, sitting in a sun-drenched, minimalist studio. She is dressed in simple, high-quality linen, looking thoughtfully off-camera. The background is softly blurred, showing rolls of organic fabrics and a large window overlooking a misty forest. The image evokes a sense of deep purpose, artisanal heritage, and a modern, sustainable mission." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaMBLk6QYiotYcHTu9X8ANKOD9MT_wRBGDv5RTyPQuA5lT5zzl4iSJB9Xf3wWWDNGdQzWqUnuZLodQWjinLVslllwLQcWO8PVf8fMBxzOZOWxLrGuimy2JrgeAdrm8SFFwSilSI-RHftDIb1R3Tgbxdn3xB0fwBHuemjRAF67eQaWzXTpFzIjo0Wj7rRZo9_bWqhY6fWfibafGk4_ZpH7hLSPGjR7d4FqUCMYHmKXXl9miZW2q_KBbNU__4b0y2z1bha7EYMLIp1Z0"/>
+</div>
+<div>
+<h2 class="text-xs font-bold tracking-[0.3em] uppercase text-secondary mb-6">Our Origins</h2>
+<h3 class="text-5xl font-serif italic mb-10 leading-tight">Born from a need for silence and substance.</h3>
+<div class="space-y-6 text-on-surface-variant font-light leading-relaxed text-lg">
+<p>CoLiv was founded in 2021 by Elena Vance, following a decade in fast-fashion that left her disillusioned. She sought to create a brand that didn't just sell products, but offered a "sanctuary"—a deliberate pause in a hyper-accelerated world.</p>
+<p>Our mission is radical longevity. We believe beauty is a byproduct of ethical integrity and material honesty. Every piece we create is designed to be lived in, repaired, and eventually returned to the earth.</p>
+<div class="pt-8">
+<a class="inline-flex items-center gap-4 group" href="#">
+<span class="w-12 h-12 rounded-full border border-primary flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-all duration-300">
+<span class="material-symbols-outlined">play_arrow</span>
+</span>
+<span class="font-bold tracking-widest uppercase text-xs">Watch the Journey</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Reviews / Community -->
+<section class="bg-surface py-32 border-t border-stone-200/10">
+<div class="max-w-screen-2xl mx-auto px-8">
+<div class="flex justify-between items-center mb-20">
+<h3 class="text-4xl font-serif italic">Sanctuary Stories</h3>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:border-primary transition-all"><span class="material-symbols-outlined">chevron_left</span></button>
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:border-primary transition-all"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Review Card 1 -->
+<div class="bg-surface-container-lowest p-10 rounded-3xl border border-stone-100/50">
+<div class="flex gap-1 text-secondary mb-6">
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface font-light italic mb-8 leading-relaxed">"The weight of the cotton is unlike anything I've owned. You can feel the quality—and knowing the impact score is so high makes every wear feel meaningful."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center font-bold text-xs">SM</div>
+<div>
+<p class="font-bold text-sm">Sarah M.</p>
+<p class="text-[10px] tracking-widest uppercase text-on-surface-variant">Verified Collector</p>
+</div>
+</div>
+</div>
+<!-- Review Card 2 -->
+<div class="bg-surface-container-lowest p-10 rounded-3xl border border-stone-100/50 scale-105 shadow-xl shadow-stone-200/20 z-10">
+<div class="flex gap-1 text-secondary mb-6">
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface font-light italic mb-8 leading-relaxed">"Authentic sustainability is hard to find. CoLiv's transparency passport is a game changer. I've washed this set 20 times and it only gets better."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center font-bold text-xs">JH</div>
+<div>
+<p class="font-bold text-sm">Julian H.</p>
+<p class="text-[10px] tracking-widest uppercase text-on-surface-variant">Architect</p>
+</div>
+</div>
+</div>
+<!-- Review Card 3 -->
+<div class="bg-surface-container-lowest p-10 rounded-3xl border border-stone-100/50">
+<div class="flex gap-1 text-secondary mb-6">
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface font-light italic mb-8 leading-relaxed">"Minimalism at its finest. The Heritage set is my daily uniform now. Worth every penny for the ethical peace of mind."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center font-bold text-xs">AL</div>
+<div>
+<p class="font-bold text-sm">Anya L.</p>
+<p class="text-[10px] tracking-widest uppercase text-on-surface-variant">Yoga Instructor</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-100 dark:bg-stone-950 w-full py-12 px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-screen-2xl mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-emerald-900">nature_people</span>
+<span class="text-xl font-serif italic text-emerald-900">CoLiv</span>
+</div>
+<p class="font-sans text-stone-600 dark:text-stone-400 text-sm leading-relaxed">Dedicated to a Curated Sanctuary. We believe in the poetry of materials and the power of ethical intent.</p>
+</div>
+<div>
+<h5 class="font-serif italic text-emerald-900 dark:text-emerald-200 mb-6">Explore</h5>
+<ul class="space-y-4 text-sm">
+<li><a class="text-stone-600 dark:text-stone-400 hover:text-emerald-700 transition-all" href="#">Products</a></li>
+<li><a class="text-stone-600 dark:text-stone-400 hover:text-emerald-700 transition-all" href="#">Brands</a></li>
+<li><a class="text-stone-600 dark:text-stone-400 hover:text-emerald-700 transition-all" href="#">Sustainability</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-serif italic text-emerald-900 dark:text-emerald-200 mb-6">Company</h5>
+<ul class="space-y-4 text-sm">
+<li><a class="text-stone-600 dark:text-stone-400 hover:text-emerald-700 transition-all" href="#">About</a></li>
+<li><a class="text-stone-600 dark:text-stone-400 hover:text-emerald-700 transition-all" href="#">Privacy</a></li>
+<li><a class="text-stone-600 dark:text-stone-400 hover:text-emerald-700 transition-all" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-serif italic text-emerald-900 dark:text-emerald-200 mb-6">Newsletter</h5>
+<p class="text-sm text-stone-600 mb-4">Join our sanctuary for slow-living updates.</p>
+<div class="flex gap-2">
+<input class="bg-white border-none rounded-full px-4 py-2 text-sm w-full focus:ring-1 focus:ring-primary" placeholder="Email address" type="email"/>
+<button class="bg-primary text-on-primary w-10 h-10 rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-screen-2xl mx-auto mt-12 pt-8 border-t border-stone-200/30 flex justify-between items-center text-[10px] tracking-widest uppercase text-stone-500">
+<p>© 2024 CoLiv. Dedicated to a Curated Sanctuary.</p>
+<div class="flex gap-6">
+<a href="#">Instagram</a>
+<a href="#">Pinterest</a>
+<a href="#">Journal</a>
+</div>
+</div>
+</footer>
+<script>
+        // Smooth reveal on scroll interaction
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body></html>

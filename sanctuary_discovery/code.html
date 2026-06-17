@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CoLiv | Explore Your Sanctuaries</title>
+<!-- Google Fonts: Newsreader for Serifs, Manrope for Sans -->
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#efeeeb",
+                    "on-primary-fixed": "#0d1f16",
+                    "surface-container-highest": "#e4e2df",
+                    "inverse-surface": "#30312f",
+                    "surface": "#fbf9f6",
+                    "on-tertiary-fixed": "#2f140f",
+                    "surface-variant": "#e4e2df",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#ffdad4",
+                    "surface-container-high": "#eae8e5",
+                    "on-surface-variant": "#424845",
+                    "primary-container": "#8ea396",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#edbbb2",
+                    "on-secondary-fixed-variant": "#55451e",
+                    "surface-bright": "#fbf9f6",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#c2938b",
+                    "background": "#fbf9f6",
+                    "on-secondary-container": "#736037",
+                    "primary-fixed-dim": "#b6ccbd",
+                    "on-background": "#1b1c1a",
+                    "primary-fixed": "#d2e8d9",
+                    "secondary-fixed-dim": "#dcc492",
+                    "on-primary-container": "#27392f",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#4d2d27",
+                    "outline": "#727875",
+                    "on-secondary-fixed": "#251a00",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f2f0ed",
+                    "surface-container-low": "#f5f3f0",
+                    "secondary": "#4C5C2D",
+                    "surface-dim": "#dbdad7",
+                    "on-surface": "#1b1c1a",
+                    "on-primary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#b6ccbd",
+                    "primary": "#6A7E3F",
+                    "outline-variant": "#c2c8c4",
+                    "on-tertiary-fixed-variant": "#613e37",
+                    "surface-tint": "#4f6357",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#f6dda9",
+                    "secondary-fixed": "#f9e0ac",
+                    "on-primary-fixed-variant": "#384b40",
+                    "tertiary": "#D96868",
+                    "emerald": {
+                        "900": "#4C5C2D",
+                        "800": "#4C5C2D",
+                        "700": "#6A7E3F",
+                        "600": "#6A7E3F",
+                        "500": "#6A7E3F",
+                        "400": "#6A7E3F",
+                        "300": "#FBF6F6",
+                        "200": "#FBF6F6",
+                        "100": "#FBF6F6",
+                        "50": "#FBF6F6"
+                    }
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader", "serif"],
+                    "display": ["Newsreader", "serif"],
+                    "body": ["Manrope", "sans-serif"],
+                    "label": ["Manrope", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fbf9f6;
+            color: #1b1c1a;
+            font-family: 'Manrope', sans-serif;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(251, 249, 246, 0.7);
+            backdrop-filter: blur(32px);
+        }
+        .cloud-blur {
+            filter: blur(120px);
+            opacity: 0.4;
+            z-index: -1;
+        }
+        .ghost-border {
+            border: 1px solid rgba(194, 200, 196, 0.15);
+        }
+        .serif-italic {
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="selection:bg-primary-fixed selection:text-on-primary-fixed-variant">
+<!-- Header / TopAppBar -->
+<header class="fixed top-0 w-full z-50 glass-nav border-b border-stone-200/15 dark:border-stone-800/15">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-900" style="font-variation-settings: 'FILL' 1;">nature_people</span>
+<span class="text-2xl font-serif italic text-emerald-900">CoLiv</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-emerald-900 font-semibold border-b border-emerald-900/40 font-sans tracking-wide" href="#">Products</a>
+<a class="text-stone-500 font-medium hover:text-emerald-700 transition-colors duration-300 font-sans tracking-wide" href="#">Brands</a>
+<a class="text-stone-500 font-medium hover:text-emerald-700 transition-colors duration-300 font-sans tracking-wide" href="#">Sustainability</a>
+<a class="text-stone-500 font-medium hover:text-emerald-700 transition-colors duration-300 font-sans tracking-wide" href="#">About</a>
+</nav>
+<div class="flex items-center gap-6">
+<span class="text-stone-500 font-medium font-sans tracking-wide cursor-pointer hover:text-emerald-700 transition-all">Explore</span>
+<span class="material-symbols-outlined text-stone-600 cursor-pointer">search</span>
+</div>
+</div>
+</header>
+<main class="relative pt-32 pb-24 px-6 md:px-12 lg:px-24 max-w-screen-2xl mx-auto">
+<!-- Atmospheric Blobs -->
+<div class="absolute top-20 right-[-10%] w-96 h-96 bg-primary rounded-full cloud-blur"></div>
+<div class="absolute bottom-40 left-[-5%] w-80 h-80 bg-tertiary rounded-full cloud-blur"></div>
+<!-- Hero Headline -->
+<section class="mb-24 text-center md:text-left">
+<h1 class="text-5xl md:text-7xl font-serif italic leading-tight text-on-surface max-w-4xl">
+                Explore Your <br/>
+<span class="text-primary">Sanctuaries</span>
+</h1>
+<p class="mt-6 text-xl md:text-2xl font-body text-on-surface-variant max-w-2xl leading-relaxed">
+                A curated odyssey through sustainable living, mindful wellness, and the organic essence of nature. Find your path to holistic resonance.
+            </p>
+</section>
+<!-- Bento Grid Sections -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-20">
+<!-- Home Sanctuary -->
+<section class="md:col-span-8 flex flex-col gap-8 group">
+<div class="relative overflow-hidden rounded-xl aspect-[16/9] shadow-sm">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An ethereal, sun-drenched minimalist living room featuring sustainable furniture made of light-toned reclaimed wood and natural linen. Large floor-to-ceiling windows look out onto a serene forest. The lighting is warm and organic, creating a high-end editorial feel with soft shadows. The color palette is ivory, sage green, and warm wood tones, embodying a curated sanctuary aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO6Ue_X2lMWMOlY774-KKlWFSOv6ulQ4ObDSO2WVdACyILIZqVEjmgtBD9DEBty--ElxuoQk7lbKA8h2VTjeXeweYy73x5Tp2mba4zsW8CBEttWd1JrDLKHgD52LmU4jIeIUiMWdM01IagL452EluPEcoEwO8169HMI_C_4UkryDRMtQ2rViwQgtb16Ibv-fHIndEpDSS3OPXeXxj5EsnfxOcukuC2OTHYo1hwgXYztvvQgCVb3nin7IuKRC8fbINiGTHhiUu3b0oh"/>
+</div>
+<div class="max-w-2xl">
+<div class="flex items-center gap-3 mb-4">
+<span class="w-8 h-[1px] bg-primary"></span>
+<span class="text-sm font-label tracking-widest text-primary uppercase">Sustainable Living</span>
+</div>
+<h2 class="text-4xl font-serif italic mb-6">Home Sanctuary</h2>
+<p class="text-lg font-body text-on-surface-variant mb-8 leading-relaxed">
+                        Curate a living space that breathes. Our home sanctuary focuses on artisanal, sustainable furniture and honest materials like hemp, cork, and reclaimed timber, designed to foster a deep sense of belonging and peace.
+                    </p>
+<a class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-4 transition-all duration-300" href="#">
+                        Explore Sanctuary <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- Wellness Sanctuary -->
+<section class="md:col-span-4 flex flex-col gap-6 mt-0 md:mt-24 group">
+<div class="relative overflow-hidden rounded-xl aspect-[4/5] shadow-sm">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A peaceful wellness space with a textured clay wall and a single organic cotton yoga mat. Beside it sits a handcrafted ceramic bowl with ayurvedic herbs and a small wisp of incense smoke. The scene is illuminated by soft, side-angled natural morning light. The mood is meditative and serene, utilizing a palette of soft blush pink and warm ivory tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP40WbG8-pOnpxJAuWZ4ScGXC9nnMuqQjV8BrMEQdBg01aW2ewsVcS58_9bscy0bvrYZeYsZlF1fXJhPmuizESiwaBqP8v_fzw8b3kXn3gummSASgEzd0swZfexaYIMqxxObXD5nqSUgMVTt0dcVsxO3v4Bg1U06wvCU3dPMsrI0KMTKk05oLetHbIH2gaFx3WMirFo-vlLhN9RMtPvx4NyNeX5hlHEMWQhM_oSCPKpNyQMszGGyQ58yqWXJXMl7KNCgGCEQjasuk_"/>
+</div>
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="w-8 h-[1px] bg-tertiary"></span>
+<span class="text-sm font-label tracking-widest text-tertiary uppercase">Inner Balance</span>
+</div>
+<h2 class="text-3xl font-serif italic mb-4">Wellness Sanctuary</h2>
+<p class="text-base font-body text-on-surface-variant mb-6 leading-relaxed">
+                        Reconnect with the self through the ancient wisdom of Ayurveda, yoga practices, and deep meditation rituals.
+                    </p>
+<a class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-4 transition-all duration-300" href="#">
+                        Explore Sanctuary <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- Earth Sanctuary (Asymmetric Swap) -->
+<section class="md:col-span-5 flex flex-col gap-6 group">
+<div class="relative overflow-hidden rounded-xl aspect-square shadow-sm">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A wide-angle landscape of a regenerative farm at dusk, featuring lush greenery, diverse organic crops, and a small, modern greenhouse. The sky is a soft blend of twilight colors—muted sage and dusky pink. The focus is on the rich, dark soil and the vibrant health of the plants. The overall aesthetic is grounded, high-end, and respectful of the natural earth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvX1ItABbP69cWXA1XNVlx9acMWk8PxDoU8ahA_693DdeSeqyAg8x5wVAPbJLdFhU0N4sgBI0KmJgzmAFfnCCQ7C853nuGVr8PmzQ47QEr15gdDKMiCablxsCXVPQd_sQb9oEncEzeNqvJK-eBN2JvxGRCH2d-0p6P5mRnJp--sJ9n2J-y91PUaFVPfq1u8mGI74MEeNG_EXDsTbcogQK_4yxWLSk0P3UKzY6rlNXOTgbhp298k0d58-OZ5HGB2yFkFybjIzt8cT-U"/>
+</div>
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="w-8 h-[1px] bg-secondary"></span>
+<span class="text-sm font-label tracking-widest text-secondary uppercase">Regenerative Care</span>
+</div>
+<h2 class="text-3xl font-serif italic mb-4">Earth Sanctuary</h2>
+<p class="text-base font-body text-on-surface-variant mb-6 leading-relaxed">
+                        Dedicated to regenerative agricultural practices and organic farming. We believe in returning more to the earth than we take, preserving the landscape for generations.
+                    </p>
+<a class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-4 transition-all duration-300" href="#">
+                        Explore Sanctuary <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- Food Sanctuary -->
+<section class="md:col-span-7 flex flex-col gap-8 md:pl-12 group">
+<div class="relative overflow-hidden rounded-xl aspect-[16/9] shadow-sm">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A beautifully composed flat lay of organic ancient grains—quinoa, farro, and amaranth—in rustic clay bowls on a stone surface. Scattered around are fresh sprigs of herbs and a carafe of golden olive oil. The lighting is crisp and natural, highlighting the textures of the food. The color palette is earthy and rich, dominated by warm beige and deep greens." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc2qBxGu4BovaunotwFZaP1bX9i-CyPMt2vrs-EwF8dvsX6d-dAEBKNiVcZdo-kERz8e5pphyzrPL-P8qBIr26NyE7Uc4cW0rFUYluaE17nw6JK9GDdZcy8g9fFBDC5_JMNVuCB9oar77VQ6PfD7RRPBcvomswyEdj61oBEeSx4ZICpbg9OzNPYfdgySH8kqq0uPkJwFmB2oqH7SrFlMrRC_XlQ2HF7qDYYnrGzmJP9P1ENbyimqlLjuaHXWObSwWHU-GT6L22Szuw"/>
+</div>
+<div class="max-w-xl">
+<div class="flex items-center gap-3 mb-4">
+<span class="w-8 h-[1px] bg-primary-container"></span>
+<span class="text-sm font-label tracking-widest text-primary-container uppercase">Pure Nourishment</span>
+</div>
+<h2 class="text-4xl font-serif italic mb-6">Food Sanctuary</h2>
+<p class="text-lg font-body text-on-surface-variant mb-8 leading-relaxed">
+                        Nourish the body with ancestral wisdom. Explore our collection of organic heirloom grains, seasonal harvests, and nutrient-dense foods curated for vital living and culinary joy.
+                    </p>
+<a class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-4 transition-all duration-300" href="#">
+                        Explore Sanctuary <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-100 dark:bg-stone-950 w-full py-12 px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-screen-2xl mx-auto">
+<div class="flex flex-col gap-4">
+<span class="text-xl font-serif italic text-emerald-900">CoLiv</span>
+<p class="text-stone-600 font-sans leading-relaxed text-sm">
+                    © 2024 CoLiv. Your Ecosystem for Conscious Living. We believe in the harmony of modern life and the natural world.
+                </p>
+</div>
+<div>
+<h4 class="font-serif italic text-emerald-900 mb-6 text-lg">Sanctuaries</h4>
+<ul class="flex flex-col gap-3 text-stone-600 font-sans">
+<li><a class="hover:text-emerald-700 transition-all" href="#">Home Sanctuary</a></li>
+<li><a class="hover:text-emerald-700 transition-all" href="#">Wellness Sanctuary</a></li>
+<li><a class="hover:text-emerald-700 transition-all" href="#">Earth Sanctuary</a></li>
+<li><a class="hover:text-emerald-700 transition-all" href="#">Food Sanctuary</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-serif italic text-emerald-900 mb-6 text-lg">Philosophy</h4>
+<ul class="flex flex-col gap-3 text-stone-600 font-sans">
+<li><a class="hover:text-emerald-700 transition-all" href="#">Sustainability</a></li>
+<li><a class="hover:text-emerald-700 transition-all" href="#">Brands</a></li>
+<li><a class="hover:text-emerald-700 transition-all" href="#">Products</a></li>
+<li><a class="hover:text-emerald-700 transition-all" href="#">About</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-serif italic text-emerald-900 mb-6 text-lg">Connect</h4>
+<ul class="flex flex-col gap-3 text-stone-600 font-sans">
+<li><a class="hover:text-emerald-700 transition-all" href="#">Privacy</a></li>
+<li><a class="hover:text-emerald-700 transition-all" href="#">Instagram</a></li>
+<li><a class="hover:text-emerald-700 transition-all" href="#">Journal</a></li>
+<li><a class="hover:text-emerald-700 transition-all" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions
+        document.querySelectorAll('a').forEach(anchor => {
+            anchor.addEventListener('mousedown', function() {
+                this.style.transform = 'scale(0.98)';
+                this.style.opacity = '0.8';
+            });
+            anchor.addEventListener('mouseup', function() {
+                this.style.transform = 'scale(1)';
+                this.style.opacity = '1';
+            });
+            anchor.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+                this.style.opacity = '1';
+            });
+        });
+
+        // Simple parallax-ish scroll effect for the blobs
+        window.addEventListener('scroll', () => {
+            const scroll = window.pageYOffset;
+            const blobs = document.querySelectorAll('.cloud-blur');
+            blobs.forEach((blob, index) => {
+                const speed = (index + 1) * 0.05;
+                blob.style.transform = `translateY(${scroll * speed}px)`;
+            });
+        });
+    </script>
+</body></html>

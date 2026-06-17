@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoLiv | Marketplace</title>
+    <!-- Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container": "#efeeeb",
+                        "surface-container-highest": "#e4e2df",
+                        "surface": "#fbf9f6",
+                        "surface-variant": "#e4e2df",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#424845",
+                        "on-surface": "#1b1c1a",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#c2c8c4",
+                        
+                        /* Updated FSD Colors */
+                        "primary": "#6A7E3F",       /* Earth Green */
+                        "secondary": "#4C5C2D",     /* Deep Forest Green */
+                        "tertiary": "#D96868",      /* Soft Coral */
+                        
+                        "emerald": {
+                            "900": "#4C5C2D",
+                            "800": "#4C5C2D",
+                            "700": "#6A7E3F",
+                            "600": "#6A7E3F",
+                            "500": "#6A7E3F",
+                            "400": "#6A7E3F",
+                            "300": "#FBF6F6",
+                            "200": "#FBF6F6",
+                            "100": "#FBF6F6",
+                            "50": "#FBF6F6"
+                        }
+                    },
+                    fontFamily: {
+                        "serif": ["Newsreader", "serif"],
+                        "sans": ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Manrope', sans-serif; background-color: #fbf9f6; color: #1b1c1a; }
+        .font-serif { font-family: 'Newsreader', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .glass-nav { backdrop-filter: blur(32px); -webkit-backdrop-filter: blur(32px); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-stone-50/70 glass-nav border-b border-stone-200/15">
+        <div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">nature_people</span>
+                <span class="text-2xl font-serif italic text-secondary tracking-tight">CoLiv</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-secondary font-semibold border-b border-secondary/40 font-sans tracking-wide text-sm" href="#">Discover</a>
+                <a class="text-primary font-bold font-sans tracking-wide text-sm" href="#">Shop</a>
+                <a class="text-stone-500 hover:text-primary transition-colors duration-300 font-sans tracking-wide text-sm" href="#">Learn</a>
+                <a class="text-stone-500 hover:text-primary transition-colors duration-300 font-sans tracking-wide text-sm" href="#">Experiences</a>
+                <a class="text-stone-500 hover:text-primary transition-colors duration-300 font-sans tracking-wide text-sm" href="#">Community</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="material-symbols-outlined p-2 text-primary hover:bg-surface-container rounded-full transition-all">search</button>
+                <button class="material-symbols-outlined p-2 text-primary hover:bg-surface-container rounded-full transition-all">shopping_bag</button>
+                <button class="material-symbols-outlined p-2 text-primary hover:bg-surface-container rounded-full transition-all">person</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-24 px-8 md:px-16 max-w-screen-2xl mx-auto flex flex-col md:flex-row gap-12">
+        
+        <!-- Filters Sidebar -->
+        <aside class="w-full md:w-64 shrink-0 hidden md:block">
+            <h2 class="text-3xl font-serif italic text-secondary mb-8">Filters</h2>
+            
+            <div class="space-y-8">
+                <!-- Category -->
+                <div>
+                    <h3 class="font-bold text-sm uppercase tracking-widest text-secondary mb-4">Sanctuary</h3>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input type="checkbox" class="form-checkbox text-primary rounded-md focus:ring-primary h-5 w-5 border-outline-variant bg-surface-container-lowest">
+                            <span class="text-sm group-hover:text-primary transition-colors">Home</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input type="checkbox" class="form-checkbox text-primary rounded-md focus:ring-primary h-5 w-5 border-outline-variant bg-surface-container-lowest">
+                            <span class="text-sm group-hover:text-primary transition-colors">Wellness</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input type="checkbox" checked class="form-checkbox text-primary rounded-md focus:ring-primary h-5 w-5 border-outline-variant bg-surface-container-lowest">
+                            <span class="text-sm font-semibold text-primary group-hover:text-primary transition-colors">Earth</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input type="checkbox" class="form-checkbox text-primary rounded-md focus:ring-primary h-5 w-5 border-outline-variant bg-surface-container-lowest">
+                            <span class="text-sm group-hover:text-primary transition-colors">Food</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Sustainability Score -->
+                <div>
+                    <h3 class="font-bold text-sm uppercase tracking-widest text-secondary mb-4">Consciousness Score</h3>
+                    <input type="range" min="0" max="100" value="80" class="w-full h-1 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary">
+                    <div class="flex justify-between text-xs text-on-surface-variant mt-2 font-bold">
+                        <span>80+</span>
+                        <span>100</span>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div>
+                    <h3 class="font-bold text-sm uppercase tracking-widest text-secondary mb-4">Certifications</h3>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input type="checkbox" class="form-checkbox text-primary rounded-md focus:ring-primary h-5 w-5 border-outline-variant bg-surface-container-lowest">
+                            <span class="text-sm group-hover:text-primary transition-colors">Fair Trade Certified</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input type="checkbox" class="form-checkbox text-primary rounded-md focus:ring-primary h-5 w-5 border-outline-variant bg-surface-container-lowest">
+                            <span class="text-sm group-hover:text-primary transition-colors">Certified Organic</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input type="checkbox" class="form-checkbox text-primary rounded-md focus:ring-primary h-5 w-5 border-outline-variant bg-surface-container-lowest">
+                            <span class="text-sm group-hover:text-primary transition-colors">B Corp</span>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        </aside>
+
+        <!-- Product Grid -->
+        <section class="flex-1">
+            <div class="flex justify-between items-end mb-8">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-serif italic text-secondary mb-2">Earth Sanctuary Collection</h1>
+                    <p class="text-on-surface-variant font-sans">142 conscious products found.</p>
+                </div>
+                <div class="hidden sm:flex items-center gap-4 text-sm font-semibold">
+                    <span>Sort by:</span>
+                    <select class="bg-surface-container-lowest border border-outline-variant rounded-full px-4 py-2 text-secondary focus:ring-primary">
+                        <option>Highest Impact</option>
+                        <option>New Arrivals</option>
+                        <option>Price: Low to High</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Product Card 1 -->
+                <div class="group flex flex-col bg-surface-container-lowest rounded-[2rem] overflow-hidden shadow-lg shadow-black/5 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="relative aspect-[4/5] overflow-hidden bg-surface-container">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjNJXT65avDADPks1ea6PIk0O68vzqLupoBN9aqz-uRqmGfPlleXeHBRRZzMZOlMyzOxLxRkx4fwrsY11vwgW_4fRMucalUmm7jpTX0OSCEcQeINoZWReQGxCU9M6A_MNsrPlAlIVKJkXXCKoiGdZDwVtNZrMzDvWscOZdfHApwN1lj5e4LFTz7MD01JjDqvmvTC7v8-da0q1-AbIElFLg_AI30k8bgfjfReZ-ijRweZji3-6B1wNYj2pdIgMWzR8ECkWlMEdsohmI" alt="Ceramic Bowls" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute top-4 right-4 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-primary flex items-center gap-1 shadow-sm">
+                            <span class="material-symbols-outlined text-[14px]">eco</span>
+                            91/100
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="text-xs uppercase tracking-widest text-on-surface-variant font-bold mb-1">Clay &amp; Co.</div>
+                        <h3 class="text-xl font-serif italic text-secondary mb-2">Artisanal Terra Bowls</h3>
+                        <p class="text-lg font-sans text-on-surface mb-4">₹2,499</p>
+                        
+                        <div class="mt-auto mb-6">
+                            <p class="text-sm text-on-surface-variant bg-surface rounded-xl p-3 border border-outline-variant/30 leading-relaxed">
+                                <span class="font-bold text-primary block mb-1">Impact Statement</span>
+                                Locally sourced river clay, 100% plastic-free kiln process.
+                            </p>
+                        </div>
+                        
+                        <button class="w-full py-3 bg-surface-container-highest text-secondary hover:bg-primary hover:text-white rounded-full text-sm font-bold transition-colors">
+                            View Product
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="group flex flex-col bg-surface-container-lowest rounded-[2rem] overflow-hidden shadow-lg shadow-black/5 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="relative aspect-[4/5] overflow-hidden bg-surface-container">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3T7ULAdfX2In6QP0Cj4ZNlqvV0unuVCZBqgIP8qCnlU8E4ZQ90TAV5lXU2TClU7yyBT_F5VcfQaWuoOia2tgHbO-mh5-2UAxMXNoaxj3heUzhXjRUdnKAZT2s3J74cLBCDyQpuEghWHBhEK73itlyDQu7M6yQG5elGuHAHi7sFGtwU6BoQNTBP-pDG3naO00r1N9Nxa5PEyyaxbl6QDmjXMVLBu4qxSsmS5Q4Ktaucb1M8dSZdH4qRFdn4JJseL2ryoIJ21Zxvsyn" alt="Garden Tools" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute top-4 right-4 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-primary flex items-center gap-1 shadow-sm">
+                            <span class="material-symbols-outlined text-[14px]">eco</span>
+                            98/100
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="text-xs uppercase tracking-widest text-on-surface-variant font-bold mb-1">Rooted Forge</div>
+                        <h3 class="text-xl font-serif italic text-secondary mb-2">Heirloom Hand Trowel</h3>
+                        <p class="text-lg font-sans text-on-surface mb-4">₹1,850</p>
+                        
+                        <div class="mt-auto mb-6">
+                            <p class="text-sm text-on-surface-variant bg-surface rounded-xl p-3 border border-outline-variant/30 leading-relaxed">
+                                <span class="font-bold text-primary block mb-1">Impact Statement</span>
+                                Forged from 100% recycled carbon steel and reclaimed ash wood.
+                            </p>
+                        </div>
+                        
+                        <button class="w-full py-3 bg-surface-container-highest text-secondary hover:bg-primary hover:text-white rounded-full text-sm font-bold transition-colors">
+                            View Product
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="group flex flex-col bg-surface-container-lowest rounded-[2rem] overflow-hidden shadow-lg shadow-black/5 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="relative aspect-[4/5] overflow-hidden bg-surface-container">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmlnOjohrS5XeQfo-gGZ5uxjCcLFtSaaHGYr9vfkfeQDFBjOHhxoA3HcSB36lw4F_aPe3LAZgy-wUlZAXU8T2Tptuzl-zGqV8tm15e510yBIQfuyc230xTABKGLgxXRowTHpGs27Ej54bDV0cVtumK07VOocd3yFNyHwvMcgGSgEdlIEfJvPWeTDRj96PV7t0SJ5hjtQQp4p6e77wGluvl4VRdIPbi0n33uCny76ylGIJoOgSU7DmhAZhHRRWzQUUXzt718UdekhlX" alt="Solar Lamp" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute top-4 right-4 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-primary flex items-center gap-1 shadow-sm">
+                            <span class="material-symbols-outlined text-[14px]">eco</span>
+                            89/100
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="text-xs uppercase tracking-widest text-on-surface-variant font-bold mb-1">Lumio Eco</div>
+                        <h3 class="text-xl font-serif italic text-secondary mb-2">Aura Solar Lamp</h3>
+                        <p class="text-lg font-sans text-on-surface mb-4">₹6,200</p>
+                        
+                        <div class="mt-auto mb-6">
+                            <p class="text-sm text-on-surface-variant bg-surface rounded-xl p-3 border border-outline-variant/30 leading-relaxed">
+                                <span class="font-bold text-primary block mb-1">Impact Statement</span>
+                                Zero grid reliance. 1 purchase = 1 solar light donated.
+                            </p>
+                        </div>
+                        
+                        <button class="w-full py-3 bg-surface-container-highest text-secondary hover:bg-primary hover:text-white rounded-full text-sm font-bold transition-colors">
+                            View Product
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Pagination -->
+            <div class="mt-12 flex justify-center gap-2">
+                <button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container text-secondary"><span class="material-symbols-outlined">chevron_left</span></button>
+                <button class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">1</button>
+                <button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container font-bold text-secondary">2</button>
+                <button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container font-bold text-secondary">3</button>
+                <button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container text-secondary"><span class="material-symbols-outlined">chevron_right</span></button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-stone-100 w-full py-12 px-8 mt-12">
+        <div class="max-w-screen-2xl mx-auto flex flex-col items-center gap-4">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary">nature_people</span>
+                <span class="text-xl font-serif italic text-secondary">CoLiv</span>
+            </div>
+            <p class="text-sm text-stone-500">© 2024 CoLiv. Your Ecosystem for Conscious Living.</p>
+        </div>
+    </footer>
+</body>
+</html>

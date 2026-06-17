@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoLiv Partner | Impact Report</title>
+    <!-- Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container": "#efeeeb",
+                        "surface-container-highest": "#e4e2df",
+                        "surface": "#fbf9f6",
+                        "surface-variant": "#e4e2df",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#424845",
+                        "on-surface": "#1b1c1a",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#c2c8c4",
+                        
+                        /* FSD Colors */
+                        "primary": "#6A7E3F",       /* Earth Green */
+                        "secondary": "#4C5C2D",     /* Deep Forest Green */
+                        "tertiary": "#D96868",      /* Soft Coral */
+                        
+                        "emerald": {
+                            "900": "#4C5C2D",
+                            "800": "#4C5C2D",
+                            "700": "#6A7E3F",
+                            "600": "#6A7E3F",
+                            "500": "#6A7E3F",
+                            "400": "#6A7E3F",
+                            "300": "#FBF6F6",
+                            "200": "#FBF6F6",
+                            "100": "#FBF6F6",
+                            "50": "#FBF6F6"
+                        }
+                    },
+                    fontFamily: {
+                        "serif": ["Newsreader", "serif"],
+                        "sans": ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Manrope', sans-serif; background-color: #fbf9f6; color: #1b1c1a; }
+        .font-serif { font-family: 'Newsreader', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .glass-nav { backdrop-filter: blur(32px); -webkit-backdrop-filter: blur(32px); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex min-h-screen">
+
+    <!-- B2B Sidebar -->
+    <aside class="w-64 bg-surface-container-highest border-r border-outline-variant/30 hidden lg:flex flex-col shrink-0 fixed h-full z-40">
+        <div class="p-8 border-b border-outline-variant/30">
+            <div class="flex items-center gap-2 mb-8">
+                <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">nature_people</span>
+                <span class="text-xl font-serif italic text-secondary tracking-tight">CoLiv Partner</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center font-bold text-sm">AL</div>
+                <div>
+                    <h3 class="font-bold text-sm text-secondary">Aether Linen</h3>
+                    <p class="text-xs text-primary font-bold flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">verified</span> Verified</p>
+                </div>
+            </div>
+        </div>
+
+        <nav class="p-4 flex-1 flex flex-col gap-2">
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface hover:text-secondary rounded-xl font-semibold transition-colors">
+                <span class="material-symbols-outlined">insights</span> Overview
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface hover:text-secondary rounded-xl font-semibold transition-colors">
+                <span class="material-symbols-outlined">inventory_2</span> Products
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface hover:text-secondary rounded-xl font-semibold transition-colors">
+                <span class="material-symbols-outlined">receipt_long</span> Orders
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 bg-surface text-secondary rounded-xl font-bold shadow-sm border border-outline-variant/20">
+                <span class="material-symbols-outlined">compost</span> Impact Reports
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface hover:text-secondary rounded-xl font-semibold transition-colors mt-auto">
+                <span class="material-symbols-outlined">store</span> Storefront Settings
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 lg:ml-64 flex flex-col min-h-screen">
+        
+        <!-- Topbar -->
+        <header class="h-20 bg-surface/80 glass-nav border-b border-outline-variant/30 flex items-center justify-between px-8 sticky top-0 z-30">
+            <h1 class="text-xl font-serif italic text-secondary">Impact Reporting Dashboard</h1>
+            <div class="flex items-center gap-4">
+                <button class="flex items-center gap-2 px-4 py-2 border border-outline-variant rounded-full text-sm font-bold text-secondary hover:bg-surface-container transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">download</span> Export Annual Report
+                </button>
+            </div>
+        </header>
+
+        <div class="p-8 max-w-screen-xl mx-auto w-full flex-1 flex flex-col gap-8">
+            
+            <header class="mb-4">
+                <h2 class="text-4xl font-serif italic text-secondary mb-2">Aether Linen's Positive Footprint</h2>
+                <p class="text-on-surface-variant">Measuring the collective impact of your brand and your community of conscious buyers.</p>
+            </header>
+
+            <!-- Big Metrics Grid -->
+            <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+                <!-- Metric 1 -->
+                <div class="bg-surface-container-lowest p-6 rounded-[2rem] border border-outline-variant/30 shadow-sm flex flex-col justify-between">
+                    <div class="w-12 h-12 rounded-full bg-secondary/10 text-secondary flex items-center justify-center mb-4">
+                        <span class="material-symbols-outlined text-2xl">group</span>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-serif italic text-secondary mb-1">25,430</p>
+                        <p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Customers Served</p>
+                    </div>
+                </div>
+
+                <!-- Metric 2 -->
+                <div class="bg-surface-container-lowest p-6 rounded-[2rem] border border-outline-variant/30 shadow-sm flex flex-col justify-between">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-4">
+                        <span class="material-symbols-outlined text-2xl">co2</span>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-serif italic text-secondary mb-1">20 <span class="text-lg">T</span></p>
+                        <p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Carbon Reduction</p>
+                    </div>
+                </div>
+
+                <!-- Metric 3 -->
+                <div class="bg-surface-container-lowest p-6 rounded-[2rem] border border-outline-variant/30 shadow-sm flex flex-col justify-between">
+                    <div class="w-12 h-12 rounded-full bg-blue-500/10 text-blue-600 flex items-center justify-center mb-4">
+                        <span class="material-symbols-outlined text-2xl">water_drop</span>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-serif italic text-secondary mb-1">1.2 <span class="text-lg">M L</span></p>
+                        <p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Water Saved</p>
+                    </div>
+                </div>
+
+                <!-- Metric 4 -->
+                <div class="bg-surface-container-lowest p-6 rounded-[2rem] border border-outline-variant/30 shadow-sm flex flex-col justify-between">
+                    <div class="w-12 h-12 rounded-full bg-tertiary/10 text-tertiary flex items-center justify-center mb-4">
+                        <span class="material-symbols-outlined text-2xl">recycling</span>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-serif italic text-secondary mb-1">5.4 <span class="text-lg">T</span></p>
+                        <p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Waste Reduced</p>
+                    </div>
+                </div>
+
+                <!-- Metric 5 -->
+                <div class="bg-surface-container-lowest p-6 rounded-[2rem] border border-outline-variant/30 shadow-sm flex flex-col justify-between">
+                    <div class="w-12 h-12 rounded-full bg-yellow-500/10 text-yellow-600 flex items-center justify-center mb-4">
+                        <span class="material-symbols-outlined text-2xl">handshake</span>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-serif italic text-secondary mb-1">14</p>
+                        <p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Artisans Supported</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Top Impact Products -->
+            <section class="bg-surface-container-lowest p-8 rounded-[2rem] border border-outline-variant/30 shadow-sm">
+                <h3 class="text-2xl font-serif italic text-secondary mb-6">Top Impact Products</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="border-b border-outline-variant/30">
+                                <th class="pb-4 text-xs uppercase tracking-widest text-on-surface-variant font-bold">Product</th>
+                                <th class="pb-4 text-xs uppercase tracking-widest text-on-surface-variant font-bold text-center">Score</th>
+                                <th class="pb-4 text-xs uppercase tracking-widest text-on-surface-variant font-bold text-right">Units Sold</th>
+                                <th class="pb-4 text-xs uppercase tracking-widest text-on-surface-variant font-bold text-right">CO2 Saved</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-outline-variant/10">
+                            <tr>
+                                <td class="py-4 font-bold text-secondary">Heritage Lounge Set</td>
+                                <td class="py-4 text-center"><span class="inline-flex items-center justify-center bg-primary/10 text-primary font-bold text-sm rounded-full px-3 py-1">94</span></td>
+                                <td class="py-4 text-right text-on-surface-variant">1,240</td>
+                                <td class="py-4 text-right font-bold text-secondary">4.2 T</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 font-bold text-secondary">Zero-Waste Gift Set</td>
+                                <td class="py-4 text-center"><span class="inline-flex items-center justify-center bg-primary/10 text-primary font-bold text-sm rounded-full px-3 py-1">99</span></td>
+                                <td class="py-4 text-right text-on-surface-variant">890</td>
+                                <td class="py-4 text-right font-bold text-secondary">1.8 T</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 font-bold text-secondary">Organic Linen Throw</td>
+                                <td class="py-4 text-center"><span class="inline-flex items-center justify-center bg-primary/10 text-primary font-bold text-sm rounded-full px-3 py-1">92</span></td>
+                                <td class="py-4 text-right text-on-surface-variant">650</td>
+                                <td class="py-4 text-right font-bold text-secondary">2.1 T</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+</body>
+</html>

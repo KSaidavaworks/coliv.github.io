@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CoLiv | Your Ecosystem for Conscious Living</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#efeeeb",
+                        "on-primary-fixed": "#0d1f16",
+                        "surface-container-highest": "#e4e2df",
+                        "inverse-surface": "#30312f",
+                        "surface": "#fbf9f6",
+                        "on-tertiary-fixed": "#2f140f",
+                        "surface-variant": "#e4e2df",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#ffdad4",
+                        "surface-container-high": "#eae8e5",
+                        "on-surface-variant": "#424845",
+                        "primary-container": "#8ea396",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#edbbb2",
+                        "on-secondary-fixed-variant": "#55451e",
+                        "surface-bright": "#fbf9f6",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#c2938b",
+                        "background": "#fbf9f6",
+                        "on-secondary-container": "#736037",
+                        "primary-fixed-dim": "#b6ccbd",
+                        "on-background": "#1b1c1a",
+                        "primary-fixed": "#d2e8d9",
+                        "on-primary-container": "#27392f",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#4d2d27",
+                        "outline": "#727875",
+                        "on-secondary-fixed": "#251a00",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f2f0ed",
+                        "surface-container-low": "#f5f3f0",
+                        "secondary": "#4C5C2D",
+                        "surface-dim": "#dbdad7",
+                        "on-surface": "#1b1c1a",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#b6ccbd",
+                        "primary": "#6A7E3F",
+                        "outline-variant": "#c2c8c4",
+                        "on-tertiary-fixed-variant": "#613e37",
+                        "surface-tint": "#4f6357",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#f6dda9",
+                        "secondary-fixed": "#f9e0ac",
+                        "on-primary-fixed-variant": "#384b40",
+                        "tertiary": "#D96868",
+                        "emerald": {
+                            "900": "#4C5C2D",
+                            "800": "#4C5C2D",
+                            "700": "#6A7E3F",
+                            "600": "#6A7E3F",
+                            "500": "#6A7E3F",
+                            "400": "#6A7E3F",
+                            "300": "#FBF6F6",
+                            "200": "#FBF6F6",
+                            "100": "#FBF6F6",
+                            "50": "#FBF6F6"
+                        }
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader", "serif"],
+                        "display": ["Newsreader", "serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; -webkit-font-smoothing: antialiased; }
+        .font-serif { font-family: 'Newsreader', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .glass-nav { backdrop-filter: blur(32px); -webkit-backdrop-filter: blur(32px); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Smooth fade-in animation */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .reveal { animation: fadeIn 0.8s ease-out forwards; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface overflow-x-hidden">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-stone-50/70 dark:bg-stone-900/70 backdrop-blur-xl border-b border-stone-200/15 dark:border-stone-800/15">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-900 dark:text-emerald-100" style="font-variation-settings: 'FILL' 1;">nature_people</span>
+<span class="text-2xl font-serif italic text-emerald-900 dark:text-emerald-50 tracking-tight">CoLiv</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-emerald-900 dark:text-emerald-50 font-semibold border-b border-emerald-900/40 font-sans tracking-wide text-sm" href="#">Home</a>
+<a class="text-stone-500 dark:text-stone-400 font-medium hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors duration-300 font-sans tracking-wide text-sm" href="#">Marketplace</a>
+<a class="text-stone-500 dark:text-stone-400 font-medium hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors duration-300 font-sans tracking-wide text-sm" href="#">Sanctuaries</a>
+<a class="text-stone-500 dark:text-stone-400 font-medium hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors duration-300 font-sans tracking-wide text-sm" href="#">Community</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined p-2 text-primary hover:bg-surface-container rounded-full transition-all">search</button>
+<button class="material-symbols-outlined p-2 text-primary hover:bg-surface-container rounded-full transition-all">shopping_bag</button>
+<button class="px-5 py-2 bg-primary text-on-primary rounded-full font-sans font-medium text-sm transition-all hover:bg-primary/90 active:scale-95">Explore</button>
+</div>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[795px] flex items-center px-8 md:px-16 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center scale-105" data-alt="A cinematic, high-resolution photograph of a sun-drenched, minimalist living space integrated with lush indoor greenery. Soft, warm natural light filters through large linen curtains, creating dancing shadows on a polished ivory stone floor. The aesthetic is organic and premium, featuring sustainable materials like reclaimed wood and hand-woven textiles in a palette of sage green and soft ivory. The mood is tranquil, aspirational, and deeply connected to nature." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCz-sxFHRmzmQC7V4Fx9oqmNmaB-EP8AzLWgR-jsGvO8_M2pfJpI-9YDRf_oPeBf_RA4HPyExgmLvg8z3VothiX8E2XK2TWd08DiG1uXJOQXnj_4Sexgnxp7oUiQbt5Cdan0BS9hBmx1g-g1YXH99APqQWIYtyXRPsUaIONSV2-nBMDtAX1EPKTdO0CeHQCGY7xdujNythP7-n4dfBu65qKhlkP5FWpIwTroqN1cQzcivfFU2orjIH_dy6G9K8osZ8dezHI38urCE52')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-background/90 via-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-4xl reveal">
+<h1 class="text-6xl md:text-8xl font-serif italic leading-[1.1] text-on-surface mb-6">
+                    Live consciously.<br/>Choose wisely.<br/>Create harmony.
+                </h1>
+<p class="text-xl md:text-2xl font-body text-on-surface-variant max-w-xl mb-10 leading-relaxed">
+                    A holistic marketplace for products, knowledge, and experiences that nurture you and the planet.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="px-10 py-5 bg-primary text-on-primary rounded-full font-body font-semibold text-lg transition-all hover:bg-primary/90 hover:scale-[1.02] active:scale-95">
+                        Begin Your Journey
+                    </button>
+<button class="px-10 py-5 bg-surface-container-highest text-on-surface rounded-full font-body font-semibold text-lg transition-all hover:bg-surface-container-high hover:scale-[1.02] active:scale-95">
+                        Explore Marketplace
+                    </button>
+</div>
+</div>
+</section>
+<!-- Impact Dashboard Widget -->
+<section class="px-8 md:px-16 -mt-16 relative z-20">
+<div class="max-w-screen-2xl mx-auto bg-surface-container-lowest/80 backdrop-blur-xl rounded-[2rem] p-8 md:p-12 shadow-2xl shadow-primary/5 flex flex-col md:flex-row items-center gap-12 border border-outline-variant/10">
+<div class="flex-1">
+<h2 class="text-sm font-label uppercase tracking-[0.2em] text-primary font-bold mb-2">Personal Impact</h2>
+<h3 class="text-3xl font-serif italic text-on-surface">My CoLiv Impact</h3>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-16 w-full md:w-auto">
+<div class="flex flex-col">
+<span class="text-4xl font-serif text-primary">15 <span class="text-lg">kg CO2</span></span>
+<span class="text-sm font-label text-on-surface-variant mt-1">Carbon Reduction</span>
+</div>
+<div class="flex flex-col border-stone-200/50 md:border-l md:pl-8">
+<span class="text-4xl font-serif text-primary">4500 <span class="text-lg">litres</span></span>
+<span class="text-sm font-label text-on-surface-variant mt-1">Water Saved</span>
+</div>
+<div class="flex flex-col border-stone-200/50 md:border-l md:pl-8">
+<span class="text-4xl font-serif text-primary">20 <span class="text-lg">kg</span></span>
+<span class="text-sm font-label text-on-surface-variant mt-1">Waste Reduced</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Personalized Discovery -->
+<section class="py-24 px-8 md:px-16 max-w-screen-2xl mx-auto">
+<div class="mb-16">
+<h2 class="text-4xl md:text-5xl font-serif italic text-on-surface mb-4">Your Path to Holistic Living</h2>
+<p class="text-on-surface-variant max-w-lg font-body">Tailored discovery pathways designed to align with your personal values and sanctuary needs.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+<!-- Health -->
+<a class="group flex flex-col items-center p-8 bg-surface-container-low rounded-[2rem] transition-all hover:bg-primary hover:-translate-y-2" href="#">
+<span class="material-symbols-outlined text-4xl text-primary group-hover:text-on-primary mb-4 transition-colors">self_improvement</span>
+<span class="font-label font-semibold text-on-surface group-hover:text-on-primary transition-colors">Health</span>
+</a>
+<!-- Nature -->
+<a class="group flex flex-col items-center p-8 bg-surface-container-low rounded-[2rem] transition-all hover:bg-primary hover:-translate-y-2" href="#">
+<span class="material-symbols-outlined text-4xl text-primary group-hover:text-on-primary mb-4 transition-colors">forest</span>
+<span class="font-label font-semibold text-on-surface group-hover:text-on-primary transition-colors">Nature</span>
+</a>
+<!-- Home -->
+<a class="group flex flex-col items-center p-8 bg-surface-container-low rounded-[2rem] transition-all hover:bg-primary hover:-translate-y-2" href="#">
+<span class="material-symbols-outlined text-4xl text-primary group-hover:text-on-primary mb-4 transition-colors">cottage</span>
+<span class="font-label font-semibold text-on-surface group-hover:text-on-primary transition-colors">Home</span>
+</a>
+<!-- Mind -->
+<a class="group flex flex-col items-center p-8 bg-surface-container-low rounded-[2rem] transition-all hover:bg-primary hover:-translate-y-2" href="#">
+<span class="material-symbols-outlined text-4xl text-primary group-hover:text-on-primary mb-4 transition-colors">psychology</span>
+<span class="font-label font-semibold text-on-surface group-hover:text-on-primary transition-colors">Mind</span>
+</a>
+<!-- Food -->
+<a class="group flex flex-col items-center p-8 bg-surface-container-low rounded-[2rem] transition-all hover:bg-primary hover:-translate-y-2" href="#">
+<span class="material-symbols-outlined text-4xl text-primary group-hover:text-on-primary mb-4 transition-colors">restaurant</span>
+<span class="font-label font-semibold text-on-surface group-hover:text-on-primary transition-colors">Food</span>
+</a>
+<!-- Community -->
+<a class="group flex flex-col items-center p-8 bg-surface-container-low rounded-[2rem] transition-all hover:bg-primary hover:-translate-y-2" href="#">
+<span class="material-symbols-outlined text-4xl text-primary group-hover:text-on-primary mb-4 transition-colors">groups</span>
+<span class="font-label font-semibold text-on-surface group-hover:text-on-primary transition-colors">Community</span>
+</a>
+</div>
+</section>
+<!-- Browse by Sanctuary (Asymmetric Bento Grid) -->
+<section class="py-24 px-8 md:px-16 bg-surface-container-low/50">
+<div class="max-w-screen-2xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-2xl">
+<h2 class="text-sm font-label uppercase tracking-[0.2em] text-primary font-bold mb-4">The Collection</h2>
+<h3 class="text-5xl md:text-6xl font-serif italic text-on-surface">Browse by Sanctuary</h3>
+</div>
+<button class="text-primary font-label font-bold flex items-center gap-2 hover:gap-4 transition-all underline decoration-primary/30 underline-offset-8">
+                        View All Collections <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 min-h-[800px]">
+<!-- Home Sanctuary -->
+<div class="md:col-span-7 group relative overflow-hidden rounded-[2.5rem] reveal">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="An ethereal and minimalist bedroom sanctuary with white linen bedding, a large curved clay vase with dried pampas grass, and floor-to-ceiling windows showing a misty forest morning. The color palette is composed of soft creams, warm beiges, and subtle sage greens. The lighting is diffuse and serene, creating a feeling of ultimate comfort and architectural elegance in a high-end light-mode aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCEtyjcNoRy2pAP7a88Sl5JNqPRxEufG-NIYobHfvgjGI-f6NGAhgIw_iqJQBK-GPrsuuQbqMvmKDDCKNSXnygxkXd6wjB-0ziTJRt48xPiqtstXxB3KrQCU1Njqz8k_MJ2uribWKK717SKf7-I9N2rilUG6z1PCKEaRVmbDAIPs9WSjxmXxGWmShUx6g9ykvbLUbqFIy0X8cqfXPLiNVmh17Q1cH0Co8NtoTPKdO6kuKr9WRwDeLsb2Eq94hmNSGop3cKX9X2FvfPX')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-10 left-10 text-white">
+<h4 class="text-4xl font-serif italic mb-2">Home Sanctuary</h4>
+<p class="text-white/80 font-body mb-6">Organic textures for intentional living.</p>
+<button class="px-6 py-3 bg-white text-on-surface rounded-full font-label font-bold text-sm transition-all hover:bg-primary hover:text-white">Explore Items</button>
+</div>
+</div>
+<!-- Wellness Sanctuary -->
+<div class="md:col-span-5 group relative overflow-hidden rounded-[2.5rem] reveal" style="animation-delay: 0.2s;">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A serene spa-like environment featuring stacked smooth basalt stones, a single blooming white lotus flower in a shallow stone bowl of water, and organic wooden elements. The background is a soft-focus minimalist bathroom with a deep soaking tub and natural stone walls. High-key lighting emphasizes a clean, therapeutic atmosphere using ivory and muted teal tones. The aesthetic is extremely premium, calm, and holistic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAjkKV-NHfj1u3unAse5AD6nygqbvKz4c6YrAZhEDC7FdjGhNPhnjacrs5cijBzXd5a_TZBmlqt1OqylXAlyPJiQJ4Sp-qfTNe-cbpjYeMLKN5Ti6v0Uk6SdgpZBHvrZMFjabDd9stfkH4OW3Dyw5HpakQjUSfRsrvv4HOp6wPCi51Uq0HR9Foq7eYeSof_ZM0c7CtAGLk3DyE2jcv_QZU8MTSWD5WLtbJ-Q4k5UKm0ewX061EQuZmCFtohRuouoelrcw9WSAV6JwmO')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-10 left-10 text-white">
+<h4 class="text-4xl font-serif italic mb-2">Wellness Sanctuary</h4>
+<p class="text-white/80 font-body mb-6">Tools for mindful restoration.</p>
+</div>
+</div>
+<!-- Earth Sanctuary -->
+<div class="md:col-span-5 group relative overflow-hidden rounded-[2.5rem] reveal" style="animation-delay: 0.4s;">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A beautiful close-up of sustainable garden tools, handmade terracotta pots, and vibrant green organic vegetable seedlings in a light-filled greenhouse. Dust motes dance in the sunlight. The aesthetic is earthy and tactile, focusing on natural clay, dark soil, and bright green foliage against an ivory white architectural background. The mood is hopeful, grounded, and luxurious in its simplicity." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC3T7ULAdfX2In6QP0Cj4ZNlqvV0unuVCZBqgIP8qCnlU8E4ZQ90TAV5lXU2TClU7yyBT_F5VcfQaWuoOia2tgHbO-mh5-2UAxMXNoaxj3heUzhXjRUdnKAZT2s3J74cLBCDyQpuEghWHBhEK73itlyDQu7M6yQG5elGuHAHi7sFGtwU6BoQNTBP-pDG3naO00r1N9Nxa5PEyyaxbl6QDmjXMVLBu4qxSsmS5Q4Ktaucb1M8dSZdH4qRFdn4JJseL2ryoIJ21Zxvsyn')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-10 left-10 text-white">
+<h4 class="text-4xl font-serif italic mb-2">Earth Sanctuary</h4>
+<p class="text-white/80 font-body mb-6">Nurturing your external roots.</p>
+</div>
+</div>
+<!-- Food Sanctuary -->
+<div class="md:col-span-7 group relative overflow-hidden rounded-[2.5rem] reveal" style="animation-delay: 0.6s;">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="An editorial-style kitchen scene featuring a minimalist marble countertop with an array of organic, vibrant vegetables, artisanal glass jars of grains, and hand-forged copper cookware. The scene is illuminated by bright, natural side-lighting that highlights textures. The colors are rich and organic, dominated by deep greens, warm copper, and pure white marble. It feels like a high-end culinary sanctuary for conscious eating." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBJNoLbpGzsdJHQfbJXQnxrt37qQ_sSGwpZdX_YyUSZZA3yaSjFtArz1G26qGBbF_ndJbs12c4eaeLVc5h4aFdMK0Wq1mPnfredwyjH0XakwurGwh7HKTs7CJy_vpqgWi-Ilbwj7tLTWeGCpkMJqGSugj3V1YLvrqWeS3SUYC30sN5nrzQE9LRlw9FXg5ofYZ38c0eV57X-pjud5UeFKHVCHywnu_awNtO-mjHMNcc1ZpHMp6rHaCn9jvedeGvf2RcYk83dGBb9wAL8')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-10 left-10 text-white">
+<h4 class="text-4xl font-serif italic mb-2">Food Sanctuary</h4>
+<p class="text-white/80 font-body mb-6">Fueling the soul with purity.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Conscious Brands -->
+<section class="py-24 px-8 md:px-16 overflow-hidden">
+<div class="max-w-screen-2xl mx-auto mb-16">
+<h2 class="text-4xl font-serif italic text-on-surface">Featured Conscious Brands</h2>
+</div>
+<div class="flex gap-8 overflow-x-auto no-scrollbar pb-12 snap-x px-4">
+<!-- Brand Card 1 -->
+<div class="flex-none w-[350px] snap-center bg-surface-container-lowest rounded-[2rem] p-8 shadow-lg shadow-on-surface/5 group">
+<div class="h-48 mb-6 rounded-xl overflow-hidden bg-stone-100 flex items-center justify-center relative">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A minimalist logo for a luxury sustainable brand, presented as a subtle embossed emblem on fine textured ivory paper. The lighting is dramatic and cinematic, highlighting the paper's tooth and the delicate shadows of the embossing. The design is clean, sophisticated, and modern, utilizing a deep sage green accent color in a high-end light-mode setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCf1HiYvw4l09uDPtzLHfH2JpPhi62iaHA5JgY5smhUrcAY23zhzuiRUbJgCk5j2KkMxhYR4hnhcxtaed7crFsh6I2X2yG9WBvELRbjz6_CADZDmpByoVhurHxgqz4DzwXalzxYHmXTjchEpZxQH8QfdvVTKmeDIZ8wRKOjje1iRJh0ulPCp601EB6KXpI8bWftdKcc3SrGoQQ8BfQnbgxffIk0jZBVeUuk9Bi07pLcHroYiHN7C52lhjxTlk_jeVTBs-QYQXvVaY8t')"></div>
+</div>
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="text-xl font-label font-bold text-on-surface">Aether Linen</h4>
+<p class="text-sm text-on-surface-variant">Pure Organic Textiles</p>
+</div>
+<div class="bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full text-xs font-bold">98/100</div>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Pioneering ethical harvesting and zero-waste manufacturing in the heart of Europe.</p>
+<div class="flex items-center gap-2 text-primary font-bold text-sm">
+                        Sustainability Score <span class="material-symbols-outlined text-lg">verified</span>
+</div>
+</div>
+<!-- Brand Card 2 -->
+<div class="flex-none w-[350px] snap-center bg-surface-container-lowest rounded-[2rem] p-8 shadow-lg shadow-on-surface/5 group">
+<div class="h-48 mb-6 rounded-xl overflow-hidden bg-stone-100 flex items-center justify-center relative">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A lifestyle product shot of a high-end sustainable skincare bottle made of frosted glass with a bamboo cap, resting on a smooth grey river stone. The background is a soft-focus organic botanical garden. The lighting is gentle and flattering, emphasizing the product's premium, eco-friendly materiality. The overall color palette is muted teal, warm wood, and soft ivory." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDXpoGsgkc2KLLwWhsDEDq3Sa_fPi98A4-uCGzx0-BFs_lZkPZSRyLPRHf89uxJOQnp-wQyJFWB8qZK8vXantA-3cmNtb--3EVNnGr8ruc_BaKCW_I7T0-12chDdONXiQgMo6185YuiUy68A-UUjiMKo48SDnHYGIEpdA87ezAvF2kB61WJAI_lmLOPcHWt_3pdFBb3Ec_avvsmAPmEXCIr-obStyfYnCGLSD1a79C29jaQXMHepqfYdKWnhvxQSm2Mp73eNnqDGLgY')"></div>
+</div>
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="text-xl font-label font-bold text-on-surface">Rooted Alchemy</h4>
+<p class="text-sm text-on-surface-variant">Plant-Based Skincare</p>
+</div>
+<div class="bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full text-xs font-bold">94/100</div>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Botanical formulas crafted with wild-harvested ingredients and biodegradable packaging.</p>
+<div class="flex items-center gap-2 text-primary font-bold text-sm">
+                        Sustainability Score <span class="material-symbols-outlined text-lg">verified</span>
+</div>
+</div>
+<!-- Brand Card 3 -->
+<div class="flex-none w-[350px] snap-center bg-surface-container-lowest rounded-[2rem] p-8 shadow-lg shadow-on-surface/5 group">
+<div class="h-48 mb-6 rounded-xl overflow-hidden bg-stone-100 flex items-center justify-center relative">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="An artistic arrangement of hand-thrown ceramic bowls in varied earthy tones—terracotta, slate, and sand—stacked loosely on a rustic wooden table. The lighting is warm and natural, creating a cozy and artisanal mood. The background is a minimalist plaster wall in soft ivory. The scene conveys a sense of timeless craft and conscious home design." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDjNJXT65avDADPks1ea6PIk0O68vzqLupoBN9aqz-uRqmGfPlleXeHBRRZzMZOlMyzOxLxRkx4fwrsY11vwgW_4fRMucalUmm7jpTX0OSCEcQeINoZWReQGxCU9M6A_MNsrPlAlIVKJkXXCKoiGdZDwVtNZrMzDvWscOZdfHApwN1lj5e4LFTz7MD01JjDqvmvTC7v8-da0q1-AbIElFLg_AI30k8bgfjfReZ-ijRweZji3-6B1wNYj2pdIgMWzR8ECkWlMEdsohmI')"></div>
+</div>
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="text-xl font-label font-bold text-on-surface">Clay &amp; Co.</h4>
+<p class="text-sm text-on-surface-variant">Artisanal Ceramics</p>
+</div>
+<div class="bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full text-xs font-bold">91/100</div>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Traditional pottery techniques meeting modern minimalist aesthetics and local sourcing.</p>
+<div class="flex items-center gap-2 text-primary font-bold text-sm">
+                        Sustainability Score <span class="material-symbols-outlined text-lg">verified</span>
+</div>
+</div>
+<!-- Brand Card 4 -->
+<div class="flex-none w-[350px] snap-center bg-surface-container-lowest rounded-[2rem] p-8 shadow-lg shadow-on-surface/5 group">
+<div class="h-48 mb-6 rounded-xl overflow-hidden bg-stone-100 flex items-center justify-center relative">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A modern, high-tech solar lamp with a minimalist brushed metal frame and a soft-glow LED, sitting on a balcony table overlooking a sunset cityscape. The design is sleek and functional. The lighting is atmospheric, blending the warm orange of the sunset with the cool architectural lighting of the lamp. The aesthetic is clean, premium, and focused on sustainable technology." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAmlnOjohrS5XeQfo-gGZ5uxjCcLFtSaaHGYr9vfkfeQDFBjOHhxoA3HcSB36lw4F_aPe3LAZgy-wUlZAXU8T2Tptuzl-zGqV8tm15e510yBIQfuyc230xTABKGLgxXRowTHpGs27Ej54bDV0cVtumK07VOocd3yFNyHwvMcgGSgEdlIEfJvPWeTDRj96PV7t0SJ5hjtQQp4p6e77wGluvl4VRdIPbi0n33uCny76ylGIJoOgSU7DmhAZhHRRWzQUUXzt718UdekhlX')"></div>
+</div>
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="text-xl font-label font-bold text-on-surface">Lumio Eco</h4>
+<p class="text-sm text-on-surface-variant">Solar Lighting</p>
+</div>
+<div class="bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full text-xs font-bold">89/100</div>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Renewable energy solutions integrated into beautiful, high-end architectural lighting.</p>
+<div class="flex items-center gap-2 text-primary font-bold text-sm">
+                        Sustainability Score <span class="material-symbols-outlined text-lg">verified</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action Section -->
+<section class="py-24 px-8 md:px-16">
+<div class="max-w-screen-2xl mx-auto bg-primary rounded-[3rem] p-12 md:p-24 relative overflow-hidden text-center flex flex-col items-center">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="w-full h-full bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
+</div>
+<h2 class="text-5xl md:text-7xl font-serif italic text-white mb-8 relative z-10">Start your sanctuary today.</h2>
+<p class="text-white/80 text-xl max-w-2xl mb-12 font-body relative z-10">Join a community of 50,000+ conscious individuals creating a more harmonious world through small, intentional choices.</p>
+<div class="flex gap-6 relative z-10">
+<button class="px-10 py-5 bg-white text-primary rounded-full font-bold text-lg hover:scale-105 transition-all active:scale-95 shadow-xl shadow-black/10">Join the Community</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-100 dark:bg-stone-950 w-full py-12 px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-screen-2xl mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-emerald-900 dark:text-emerald-100" style="font-variation-settings: 'FILL' 1;">nature_people</span>
+<span class="text-xl font-serif italic text-emerald-900 dark:text-emerald-50">CoLiv</span>
+</div>
+<p class="text-stone-600 dark:text-stone-400 font-sans text-sm leading-relaxed mb-6">
+                    © 2024 CoLiv. Your Ecosystem for Conscious Living.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-stone-200 dark:bg-stone-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">public</span></a>
+<a class="w-10 h-10 rounded-full bg-stone-200 dark:bg-stone-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">mail</span></a>
+</div>
+</div>
+<div>
+<h5 class="font-serif italic text-emerald-900 dark:text-emerald-200 mb-6">Discover</h5>
+<ul class="space-y-4">
+<li><a class="text-stone-600 dark:text-stone-400 font-sans hover:text-emerald-700 dark:hover:text-stone-100 transition-all text-sm" href="#">Products</a></li>
+<li><a class="text-stone-600 dark:text-stone-400 font-sans hover:text-emerald-700 dark:hover:text-stone-100 transition-all text-sm" href="#">Brands</a></li>
+<li><a class="text-stone-600 dark:text-stone-400 font-sans hover:text-emerald-700 dark:hover:text-stone-100 transition-all text-sm" href="#">Sustainability</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-serif italic text-emerald-900 dark:text-emerald-200 mb-6">Company</h5>
+<ul class="space-y-4">
+<li><a class="text-stone-600 dark:text-stone-400 font-sans hover:text-emerald-700 dark:hover:text-stone-100 transition-all text-sm" href="#">About</a></li>
+<li><a class="text-stone-600 dark:text-stone-400 font-sans hover:text-emerald-700 dark:hover:text-stone-100 transition-all text-sm" href="#">Careers</a></li>
+<li><a class="text-stone-600 dark:text-stone-400 font-sans hover:text-emerald-700 dark:hover:text-stone-100 transition-all text-sm" href="#">Press</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-serif italic text-emerald-900 dark:text-emerald-200 mb-6">Legal</h5>
+<ul class="space-y-4">
+<li><a class="text-stone-600 dark:text-stone-400 font-sans hover:text-emerald-700 dark:hover:text-stone-100 transition-all text-sm" href="#">Privacy</a></li>
+<li><a class="text-stone-600 dark:text-stone-400 font-sans hover:text-emerald-700 dark:hover:text-stone-100 transition-all text-sm" href="#">Terms</a></li>
+<li><a class="text-stone-600 dark:text-stone-400 font-sans hover:text-emerald-700 dark:hover:text-stone-100 transition-all text-sm" href="#">Cookie Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-12 pt-12 border-t border-stone-200 dark:border-stone-800 text-center">
+<button class="text-emerald-900 dark:text-emerald-200 font-serif italic text-sm hover:opacity-70 transition-all" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Back to top</button>
+</div>
+</footer>
+<script>
+        // Intersection Observer for reveal animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Smooth scroll implementation (already handled by behavior: smooth in CSS/JS)
+    </script>
+</body></html>

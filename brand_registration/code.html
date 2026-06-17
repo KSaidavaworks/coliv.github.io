@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoLiv | Partner With Us</title>
+    <!-- Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container": "#efeeeb",
+                        "surface-container-highest": "#e4e2df",
+                        "surface": "#fbf9f6",
+                        "surface-variant": "#e4e2df",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#424845",
+                        "on-surface": "#1b1c1a",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#c2c8c4",
+                        
+                        /* FSD Colors */
+                        "primary": "#6A7E3F",       /* Earth Green */
+                        "secondary": "#4C5C2D",     /* Deep Forest Green */
+                        "tertiary": "#D96868",      /* Soft Coral */
+                        
+                        "emerald": {
+                            "900": "#4C5C2D",
+                            "800": "#4C5C2D",
+                            "700": "#6A7E3F",
+                            "600": "#6A7E3F",
+                            "500": "#6A7E3F",
+                            "400": "#6A7E3F",
+                            "300": "#FBF6F6",
+                            "200": "#FBF6F6",
+                            "100": "#FBF6F6",
+                            "50": "#FBF6F6"
+                        }
+                    },
+                    fontFamily: {
+                        "serif": ["Newsreader", "serif"],
+                        "sans": ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Manrope', sans-serif; background-color: #fbf9f6; color: #1b1c1a; }
+        .font-serif { font-family: 'Newsreader', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .glass-nav { backdrop-filter: blur(32px); -webkit-backdrop-filter: blur(32px); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+
+    <!-- Navigation (Simplified for Registration) -->
+    <nav class="fixed top-0 w-full z-50 bg-stone-50/70 glass-nav border-b border-stone-200/15">
+        <div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">nature_people</span>
+                <span class="text-2xl font-serif italic text-secondary tracking-tight">CoLiv Partner</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="#" class="text-sm font-bold text-secondary hover:text-primary transition-colors">Return to Marketplace</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Registration Split Layout -->
+    <main class="min-h-screen flex flex-col md:flex-row pt-20">
+        
+        <!-- Left Side: Form -->
+        <section class="w-full md:w-1/2 lg:w-5/12 flex items-center justify-center p-8 md:p-16 relative z-10 bg-surface">
+            <div class="w-full max-w-md">
+                
+                <div class="mb-10">
+                    <h1 class="text-4xl font-serif italic text-secondary mb-3">Join the Ecosystem</h1>
+                    <p class="text-on-surface-variant leading-relaxed">Apply to become a verified brand partner. We carefully curate our marketplace to ensure authentic conscious practices.</p>
+                </div>
+
+                <form class="space-y-6">
+                    
+                    <!-- Progress Bar -->
+                    <div class="flex gap-2 mb-8">
+                        <div class="h-1 flex-1 bg-primary rounded-full"></div>
+                        <div class="h-1 flex-1 bg-surface-container-highest rounded-full"></div>
+                        <div class="h-1 flex-1 bg-surface-container-highest rounded-full"></div>
+                    </div>
+
+                    <!-- Step 1: Basics -->
+                    <div class="space-y-5">
+                        <h2 class="text-sm font-bold tracking-widest uppercase text-secondary border-b border-outline-variant/30 pb-2">1. Brand Identity</h2>
+                        
+                        <div>
+                            <label class="block text-sm font-bold text-on-surface-variant mb-1">Brand Name</label>
+                            <input type="text" class="w-full bg-surface-container-lowest border border-outline-variant rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-shadow" placeholder="e.g. Aether Linen">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-on-surface-variant mb-1">Website URL</label>
+                            <input type="url" class="w-full bg-surface-container-lowest border border-outline-variant rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-shadow" placeholder="https://">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-on-surface-variant mb-1">Primary Category</label>
+                            <select class="w-full bg-surface-container-lowest border border-outline-variant rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-shadow text-secondary">
+                                <option>Home Sanctuary</option>
+                                <option>Wellness Sanctuary</option>
+                                <option>Earth Sanctuary</option>
+                                <option>Food Sanctuary</option>
+                                <option>Mind Sanctuary</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 Preview: Impact (Hidden initially, but shown for prototype) -->
+                    <div class="space-y-5 pt-4">
+                        <h2 class="text-sm font-bold tracking-widest uppercase text-secondary border-b border-outline-variant/30 pb-2">2. Conscious Practices</h2>
+                        
+                        <div>
+                            <label class="block text-sm font-bold text-on-surface-variant mb-1">What is your primary impact focus?</label>
+                            <textarea class="w-full bg-surface-container-lowest border border-outline-variant rounded-xl px-4 py-3 h-24 focus:ring-2 focus:ring-primary focus:border-primary transition-shadow" placeholder="Tell us about your materials, supply chain, or social impact..."></textarea>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-on-surface-variant mb-2">Existing Certifications (Select all that apply)</label>
+                            <div class="grid grid-cols-2 gap-3">
+                                <label class="flex items-center gap-2 cursor-pointer bg-surface-container px-3 py-2 rounded-lg border border-transparent hover:border-primary transition-colors">
+                                    <input type="checkbox" class="form-checkbox text-primary rounded focus:ring-primary">
+                                    <span class="text-sm">B-Corp</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer bg-surface-container px-3 py-2 rounded-lg border border-transparent hover:border-primary transition-colors">
+                                    <input type="checkbox" class="form-checkbox text-primary rounded focus:ring-primary">
+                                    <span class="text-sm">Fair Trade</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer bg-surface-container px-3 py-2 rounded-lg border border-transparent hover:border-primary transition-colors">
+                                    <input type="checkbox" class="form-checkbox text-primary rounded focus:ring-primary">
+                                    <span class="text-sm">GOTS Organic</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer bg-surface-container px-3 py-2 rounded-lg border border-transparent hover:border-primary transition-colors">
+                                    <input type="checkbox" class="form-checkbox text-primary rounded focus:ring-primary">
+                                    <span class="text-sm">1% for the Planet</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6">
+                        <button type="button" class="w-full bg-secondary text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 hover:bg-primary transition-all">
+                            Submit Application
+                        </button>
+                        <p class="text-center text-xs text-on-surface-variant mt-4">
+                            By applying, you agree to our <a href="#" class="underline hover:text-primary">Conscious Verification Standards</a>.
+                        </p>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+
+        <!-- Right Side: Visual -->
+        <section class="hidden md:block w-1/2 lg:w-7/12 relative bg-surface-container overflow-hidden">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmlnOjohrS5XeQfo-gGZ5uxjCcLFtSaaHGYr9vfkfeQDFBjOHhxoA3HcSB36lw4F_aPe3LAZgy-wUlZAXU8T2Tptuzl-zGqV8tm15e510yBIQfuyc230xTABKGLgxXRowTHpGs27Ej54bDV0cVtumK07VOocd3yFNyHwvMcgGSgEdlIEfJvPWeTDRj96PV7t0SJ5hjtQQp4p6e77wGluvl4VRdIPbi0n33uCny76ylGIJoOgSU7DmhAZhHRRWzQUUXzt718UdekhlX" alt="Conscious Brand Joining CoLiv" class="absolute inset-0 w-full h-full object-cover opacity-90 mix-blend-multiply">
+            <div class="absolute inset-0 bg-gradient-to-r from-surface via-transparent to-transparent"></div>
+            
+            <div class="absolute bottom-16 right-16 left-16 max-w-lg bg-surface-container-lowest/80 backdrop-blur-xl p-8 rounded-3xl border border-outline-variant/30 shadow-2xl">
+                <span class="material-symbols-outlined text-4xl text-primary mb-4 block">compost</span>
+                <h3 class="text-2xl font-serif italic text-secondary mb-2">Grow with Purpose.</h3>
+                <p class="text-on-surface-variant leading-relaxed">
+                    "Partnering with CoLiv didn't just give us a storefront; it connected us with a global community of consumers who truly understand the value of our regenerative farming practices."
+                </p>
+                <div class="mt-4 pt-4 border-t border-outline-variant/30 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center font-bold text-xs">OL</div>
+                    <div>
+                        <p class="text-sm font-bold text-secondary">Organic Looms</p>
+                        <p class="text-xs text-on-surface-variant">Joined 2023</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>

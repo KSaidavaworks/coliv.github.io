@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoLiv | My Impact</title>
+    <!-- Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container": "#efeeeb",
+                        "surface-container-highest": "#e4e2df",
+                        "surface": "#fbf9f6",
+                        "surface-variant": "#e4e2df",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#424845",
+                        "on-surface": "#1b1c1a",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#c2c8c4",
+                        
+                        /* FSD Colors */
+                        "primary": "#6A7E3F",       /* Earth Green */
+                        "secondary": "#4C5C2D",     /* Deep Forest Green */
+                        "tertiary": "#D96868",      /* Soft Coral */
+                        
+                        "emerald": {
+                            "900": "#4C5C2D",
+                            "800": "#4C5C2D",
+                            "700": "#6A7E3F",
+                            "600": "#6A7E3F",
+                            "500": "#6A7E3F",
+                            "400": "#6A7E3F",
+                            "300": "#FBF6F6",
+                            "200": "#FBF6F6",
+                            "100": "#FBF6F6",
+                            "50": "#FBF6F6"
+                        }
+                    },
+                    fontFamily: {
+                        "serif": ["Newsreader", "serif"],
+                        "sans": ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Manrope', sans-serif; background-color: #fbf9f6; color: #1b1c1a; }
+        .font-serif { font-family: 'Newsreader', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .glass-nav { backdrop-filter: blur(32px); -webkit-backdrop-filter: blur(32px); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-stone-50/70 glass-nav border-b border-stone-200/15">
+        <div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">nature_people</span>
+                <span class="text-2xl font-serif italic text-secondary tracking-tight">CoLiv</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-stone-500 hover:text-primary transition-colors duration-300 font-sans tracking-wide text-sm" href="#">Discover</a>
+                <a class="text-stone-500 hover:text-primary transition-colors duration-300 font-sans tracking-wide text-sm" href="#">Shop</a>
+                <a class="text-stone-500 hover:text-primary transition-colors duration-300 font-sans tracking-wide text-sm" href="#">Learn</a>
+                <a class="text-stone-500 hover:text-primary transition-colors duration-300 font-sans tracking-wide text-sm" href="#">Experiences</a>
+                <a class="text-stone-500 hover:text-primary transition-colors duration-300 font-sans tracking-wide text-sm" href="#">Community</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="material-symbols-outlined p-2 text-primary hover:bg-surface-container rounded-full transition-all">search</button>
+                <button class="material-symbols-outlined p-2 text-primary hover:bg-surface-container rounded-full transition-all">shopping_bag</button>
+                <button class="material-symbols-outlined p-2 bg-surface-container text-secondary rounded-full transition-all">person</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Detailed Impact Dashboard -->
+    <main class="pt-32 pb-24 px-8 md:px-16 max-w-screen-2xl mx-auto flex flex-col lg:flex-row gap-12">
+        
+        <!-- Sidebar Navigation (Matching User Profile) -->
+        <aside class="w-full lg:w-64 shrink-0 hidden lg:block">
+            <div class="flex flex-col items-center text-center mb-8 pb-8 border-b border-outline-variant/30">
+                <div class="w-24 h-24 rounded-full bg-secondary text-white flex items-center justify-center text-3xl font-serif italic mb-4">
+                    EV
+                </div>
+                <h2 class="text-xl font-bold text-secondary">Elena Vance</h2>
+                <p class="text-sm text-on-surface-variant uppercase tracking-widest mt-1">Conscious Member</p>
+            </div>
+
+            <nav class="flex flex-col gap-2">
+                <a href="#" class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container hover:text-secondary rounded-xl font-semibold transition-colors">
+                    <span class="material-symbols-outlined">dashboard</span> Dashboard
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-3 bg-primary/10 text-primary rounded-xl font-bold transition-colors">
+                    <span class="material-symbols-outlined">compost</span> My Impact
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container hover:text-secondary rounded-xl font-semibold transition-colors">
+                    <span class="material-symbols-outlined">favorite</span> Saved Products
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container hover:text-secondary rounded-xl font-semibold transition-colors">
+                    <span class="material-symbols-outlined">school</span> My Courses
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Dashboard Content -->
+        <div class="flex-1 flex flex-col gap-12">
+            
+            <header class="flex justify-between items-end border-b border-outline-variant/30 pb-6">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-serif italic text-secondary mb-2">My Impact Dashboard</h1>
+                    <p class="text-on-surface-variant">Your lifelong positive footprint across the CoLiv ecosystem.</p>
+                </div>
+                <button class="flex items-center gap-2 px-4 py-2 border border-outline-variant rounded-full text-sm font-bold text-secondary hover:bg-surface-container transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">download</span> Export Report
+                </button>
+            </header>
+
+            <!-- Big Metrics -->
+            <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-surface-container-lowest p-8 rounded-[2rem] border border-outline-variant/30 shadow-sm flex flex-col items-center text-center">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-4">
+                        <span class="material-symbols-outlined text-3xl">co2</span>
+                    </div>
+                    <span class="text-4xl font-serif italic text-secondary mb-1">15 <span class="text-lg">kg</span></span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Carbon Reduction</span>
+                </div>
+                
+                <div class="bg-surface-container-lowest p-8 rounded-[2rem] border border-outline-variant/30 shadow-sm flex flex-col items-center text-center">
+                    <div class="w-16 h-16 rounded-full bg-blue-500/10 text-blue-600 flex items-center justify-center mb-4">
+                        <span class="material-symbols-outlined text-3xl">water_drop</span>
+                    </div>
+                    <span class="text-4xl font-serif italic text-secondary mb-1">4500 <span class="text-lg">L</span></span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Water Saved</span>
+                </div>
+
+                <div class="bg-surface-container-lowest p-8 rounded-[2rem] border border-outline-variant/30 shadow-sm flex flex-col items-center text-center">
+                    <div class="w-16 h-16 rounded-full bg-tertiary/10 text-tertiary flex items-center justify-center mb-4">
+                        <span class="material-symbols-outlined text-3xl">recycling</span>
+                    </div>
+                    <span class="text-4xl font-serif italic text-secondary mb-1">20 <span class="text-lg">kg</span></span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Waste Reduced</span>
+                </div>
+
+                <div class="bg-surface-container-lowest p-8 rounded-[2rem] border border-outline-variant/30 shadow-sm flex flex-col items-center text-center">
+                    <div class="w-16 h-16 rounded-full bg-secondary/10 text-secondary flex items-center justify-center mb-4">
+                        <span class="material-symbols-outlined text-3xl">checklist</span>
+                    </div>
+                    <span class="text-4xl font-serif italic text-secondary mb-1">120</span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Conscious Choices</span>
+                </div>
+            </section>
+
+            <!-- Impact Over Time (Placeholder Chart) -->
+            <section class="bg-surface-container-lowest p-8 rounded-[2rem] border border-outline-variant/30 shadow-sm">
+                <div class="flex justify-between items-center mb-8">
+                    <h3 class="text-2xl font-serif italic text-secondary">Impact Trajectory</h3>
+                    <select class="bg-surface text-sm border border-outline-variant rounded-lg px-3 py-1 focus:outline-none">
+                        <option>Past 12 Months</option>
+                        <option>Past 6 Months</option>
+                        <option>All Time</option>
+                    </select>
+                </div>
+                <!-- Visual Chart Representation -->
+                <div class="w-full h-64 border-b border-l border-outline-variant/50 relative flex items-end justify-between px-4 pb-2">
+                    <!-- Bars -->
+                    <div class="w-8 bg-primary/40 rounded-t-sm h-[20%] relative group"><div class="hidden group-hover:block absolute -top-8 left-1/2 -translate-x-1/2 bg-secondary text-white text-xs py-1 px-2 rounded">Jan</div></div>
+                    <div class="w-8 bg-primary/40 rounded-t-sm h-[35%] relative group"><div class="hidden group-hover:block absolute -top-8 left-1/2 -translate-x-1/2 bg-secondary text-white text-xs py-1 px-2 rounded">Feb</div></div>
+                    <div class="w-8 bg-primary/60 rounded-t-sm h-[40%] relative group"><div class="hidden group-hover:block absolute -top-8 left-1/2 -translate-x-1/2 bg-secondary text-white text-xs py-1 px-2 rounded">Mar</div></div>
+                    <div class="w-8 bg-primary/60 rounded-t-sm h-[30%] relative group"><div class="hidden group-hover:block absolute -top-8 left-1/2 -translate-x-1/2 bg-secondary text-white text-xs py-1 px-2 rounded">Apr</div></div>
+                    <div class="w-8 bg-primary/80 rounded-t-sm h-[55%] relative group"><div class="hidden group-hover:block absolute -top-8 left-1/2 -translate-x-1/2 bg-secondary text-white text-xs py-1 px-2 rounded">May</div></div>
+                    <div class="w-8 bg-primary rounded-t-sm h-[70%] relative group"><div class="hidden group-hover:block absolute -top-8 left-1/2 -translate-x-1/2 bg-secondary text-white text-xs py-1 px-2 rounded">Jun</div></div>
+                    <div class="w-8 bg-primary rounded-t-sm h-[85%] relative group"><div class="hidden group-hover:block absolute -top-8 left-1/2 -translate-x-1/2 bg-secondary text-white text-xs py-1 px-2 rounded">Jul</div></div>
+                    <div class="w-8 bg-primary rounded-t-sm h-[60%] relative group"><div class="hidden group-hover:block absolute -top-8 left-1/2 -translate-x-1/2 bg-secondary text-white text-xs py-1 px-2 rounded">Aug</div></div>
+                </div>
+            </section>
+
+            <!-- Impact by Sanctuary Breakdown -->
+            <section>
+                <h3 class="text-2xl font-serif italic text-secondary mb-6">Impact by Sanctuary</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Home -->
+                    <div class="bg-surface-container-highest p-6 rounded-2xl flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-secondary text-3xl">chair</span>
+                            <div>
+                                <h4 class="font-bold text-secondary">Home Sanctuary</h4>
+                                <p class="text-xs text-on-surface-variant uppercase tracking-widest mt-1">45 items sourced</p>
+                            </div>
+                        </div>
+                        <span class="text-2xl font-serif italic text-primary">38%</span>
+                    </div>
+                    <!-- Food -->
+                    <div class="bg-surface-container-highest p-6 rounded-2xl flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-secondary text-3xl">restaurant</span>
+                            <div>
+                                <h4 class="font-bold text-secondary">Food Sanctuary</h4>
+                                <p class="text-xs text-on-surface-variant uppercase tracking-widest mt-1">75 items sourced</p>
+                            </div>
+                        </div>
+                        <span class="text-2xl font-serif italic text-primary">42%</span>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-stone-100 w-full py-12 px-8 mt-12">
+        <div class="max-w-screen-2xl mx-auto flex flex-col items-center gap-4">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary">nature_people</span>
+                <span class="text-xl font-serif italic text-secondary">CoLiv</span>
+            </div>
+            <p class="text-sm text-stone-500">© 2024 CoLiv. Your Ecosystem for Conscious Living.</p>
+        </div>
+    </footer>
+</body>
+</html>
