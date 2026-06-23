@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>CoLiv | Secure Checkout</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        background: "#fbf9f6",
+                        surface: "#ffffff",
+                        "surface-container": "#efeeeb",
+                        "on-surface": "#1b1c1a",
+                        "on-surface-variant": "#424845",
+                        primary: "#6A7E3F",
+                        "on-primary": "#ffffff",
+                        secondary: "#4C5C2D",
+                        outline: "#727875",
+                        "outline-variant": "#c2c8c4"
+                    },
+                    fontFamily: {
+                        serif: ["Newsreader", "serif"],
+                        sans: ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Manrope', sans-serif; -webkit-font-smoothing: antialiased; }
+        .font-serif { font-family: 'Newsreader', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        
+        /* Custom radio button styling */
+        input[type="radio"]:checked {
+            background-color: #6A7E3F;
+            border-color: #6A7E3F;
+        }
+        
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .animate-fade-in { animation: fadeIn 0.5s ease-out forwards; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+
+    <!-- Minimal Header (Closed Checkout) -->
+    <header class="w-full bg-surface border-b border-outline-variant/30 py-6 px-8 flex justify-center z-50 relative">
+        <a href="../cart/code.html" class="absolute left-8 flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors font-bold text-sm">
+            <span class="material-symbols-outlined text-lg">arrow_back</span> Return to Cart
+        </a>
+        <div class="flex items-center gap-2 cursor-pointer" onclick="window.location.href='../holiv_home/code.html'">
+            <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">nature_people</span>
+            <span class="text-3xl font-serif italic text-primary tracking-tight">CoLiv</span>
+        </div>
+    </header>
+
+    <main class="flex-grow w-full max-w-screen-xl mx-auto px-4 md:px-8 py-12 flex flex-col lg:flex-row gap-12 lg:gap-24 animate-fade-in">
+        
+        <!-- Left: Checkout Forms -->
+        <div class="flex-1 max-w-2xl">
+            
+            <!-- Express Checkout -->
+            <div class="mb-10 text-center">
+                <h2 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-4">Express Checkout</h2>
+                <div class="flex gap-4 justify-center">
+                    <button class="flex-1 py-3 bg-black text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-gray-800 transition-colors shadow-sm" onclick="alert('Apple Pay Triggered')">
+                        <img src="https://www.svgrepo.com/show/511330/apple-173.svg" class="w-5 h-5 filter invert" alt="Apple"/> Pay
+                    </button>
+                    <button class="flex-1 py-3 bg-white text-gray-800 border border-outline-variant/50 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors shadow-sm" onclick="alert('Google Pay Triggered')">
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5" alt="Google"/> Pay
+                    </button>
+                </div>
+                <div class="flex items-center gap-4 mt-6 text-on-surface-variant/50 text-sm font-bold uppercase tracking-widest">
+                    <hr class="flex-grow border-outline-variant/30"/>
+                    <span>or continue below</span>
+                    <hr class="flex-grow border-outline-variant/30"/>
+                </div>
+            </div>
+
+            <form onsubmit="event.preventDefault(); alert('Order placed securely!'); window.location.href='../holiv_home/code.html';">
+                
+                <!-- 1. Contact Information -->
+                <section class="mb-10">
+                    <div class="flex justify-between items-end mb-4">
+                        <h2 class="text-2xl font-serif text-on-surface">Contact Information</h2>
+                        <a href="../login/code.html" class="text-sm text-primary font-bold hover:underline">Log in for faster checkout</a>
+                    </div>
+                    <div class="space-y-4">
+                        <input type="email" required placeholder="Email address" class="w-full px-4 py-3 bg-surface border border-outline-variant/50 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-on-surface-variant/50"/>
+                        <label class="flex items-center gap-3 text-sm text-on-surface-variant cursor-pointer">
+                            <input type="checkbox" class="w-5 h-5 rounded text-primary border-outline-variant/50 focus:ring-primary focus:ring-offset-0 bg-transparent"/>
+                            Email me with news and eco-conscious offers
+                        </label>
+                    </div>
+                </section>
+
+                <!-- 2. Shipping Address -->
+                <section class="mb-10">
+                    <h2 class="text-2xl font-serif text-on-surface mb-4">Shipping Address</h2>
+                    <div class="space-y-4">
+                        <select class="w-full px-4 py-3 bg-surface border border-outline-variant/50 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all appearance-none text-on-surface">
+                            <option value="US">United States</option>
+                            <option value="CA">Canada</option>
+                            <option value="UK">United Kingdom</option>
+                        </select>
+                        <div class="flex gap-4">
+                            <input type="text" required placeholder="First name" class="w-1/2 px-4 py-3 bg-surface border border-outline-variant/50 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-on-surface-variant/50"/>
+                            <input type="text" required placeholder="Last name" class="w-1/2 px-4 py-3 bg-surface border border-outline-variant/50 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-on-surface-variant/50"/>
+                        </div>
+                        <input type="text" required placeholder="Address" class="w-full px-4 py-3 bg-surface border border-outline-variant/50 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-on-surface-variant/50"/>
+                        <input type="text" placeholder="Apartment, suite, etc. (optional)" class="w-full px-4 py-3 bg-surface border border-outline-variant/50 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-on-surface-variant/50"/>
+                        <div class="flex gap-4">
+                            <input type="text" required placeholder="City" class="flex-grow px-4 py-3 bg-surface border border-outline-variant/50 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-on-surface-variant/50"/>
+                            <input type="text" required placeholder="State" class="w-1/3 px-4 py-3 bg-surface border border-outline-variant/50 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-on-surface-variant/50"/>
+                            <input type="text" required placeholder="ZIP code" class="w-1/3 px-4 py-3 bg-surface border border-outline-variant/50 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-on-surface-variant/50"/>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. Shipping Method -->
+                <section class="mb-10">
+                    <h2 class="text-2xl font-serif text-on-surface mb-4">Shipping Method</h2>
+                    <div class="bg-surface border border-outline-variant/50 rounded-xl overflow-hidden divide-y divide-outline-variant/50">
+                        <label class="flex items-center justify-between p-4 cursor-pointer hover:bg-surface-container transition-colors">
+                            <div class="flex items-center gap-3">
+                                <input type="radio" name="shipping" value="standard" checked class="w-5 h-5 text-primary border-outline-variant/50 focus:ring-primary focus:ring-offset-0 bg-transparent"/>
+                                <div>
+                                    <span class="block font-bold text-on-surface">Standard Conscious Shipping</span>
+                                    <span class="text-sm text-on-surface-variant">Carbon-neutral delivery (5-7 business days)</span>
+                                </div>
+                            </div>
+                            <span class="font-bold text-on-surface">Free</span>
+                        </label>
+                        <label class="flex items-center justify-between p-4 cursor-pointer hover:bg-surface-container transition-colors">
+                            <div class="flex items-center gap-3">
+                                <input type="radio" name="shipping" value="express" class="w-5 h-5 text-primary border-outline-variant/50 focus:ring-primary focus:ring-offset-0 bg-transparent"/>
+                                <div>
+                                    <span class="block font-bold text-on-surface">Express Delivery</span>
+                                    <span class="text-sm text-on-surface-variant">2-3 business days</span>
+                                </div>
+                            </div>
+                            <span class="font-bold text-on-surface">$15.00</span>
+                        </label>
+                    </div>
+                </section>
+
+                <!-- 4. Payment -->
+                <section class="mb-10">
+                    <h2 class="text-2xl font-serif text-on-surface mb-4">Payment</h2>
+                    <p class="text-sm text-on-surface-variant mb-4">All transactions are secure and encrypted.</p>
+                    
+                    <div class="bg-surface border border-outline-variant/50 rounded-xl overflow-hidden divide-y divide-outline-variant/50">
+                        <!-- Credit Card Option -->
+                        <div class="p-4 bg-surface-container/50">
+                            <label class="flex items-center gap-3 cursor-pointer mb-4">
+                                <input type="radio" name="payment" value="cc" checked class="w-5 h-5 text-primary border-outline-variant/50 focus:ring-primary focus:ring-offset-0 bg-transparent"/>
+                                <span class="font-bold text-on-surface">Credit card</span>
+                                <div class="flex gap-1 ml-auto">
+                                    <img src="https://www.svgrepo.com/show/328150/visa.svg" class="h-6" alt="Visa"/>
+                                    <img src="https://www.svgrepo.com/show/328131/mastercard.svg" class="h-6" alt="Mastercard"/>
+                                </div>
+                            </label>
+                            <!-- CC Form -->
+                            <div class="space-y-4">
+                                <input type="text" required placeholder="Card number" class="w-full px-4 py-3 bg-surface border border-outline-variant/50 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-on-surface-variant/50"/>
+                                <div class="flex gap-4">
+                                    <input type="text" required placeholder="Expiration date (MM / YY)" class="w-1/2 px-4 py-3 bg-surface border border-outline-variant/50 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-on-surface-variant/50"/>
+                                    <input type="text" required placeholder="Security code" class="w-1/2 px-4 py-3 bg-surface border border-outline-variant/50 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-on-surface-variant/50"/>
+                                </div>
+                                <input type="text" required placeholder="Name on card" class="w-full px-4 py-3 bg-surface border border-outline-variant/50 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-on-surface-variant/50"/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <button type="submit" class="w-full py-5 bg-primary text-white rounded-full font-bold text-lg hover:bg-secondary transition-colors shadow-lg shadow-primary/20 hover:-translate-y-1 active:scale-95 flex justify-center items-center gap-2">
+                    <span class="material-symbols-outlined">lock</span> Pay $332.50
+                </button>
+            </form>
+        </div>
+
+        <!-- Right: Order Summary (Sticky) -->
+        <div class="w-full lg:w-[450px]">
+            <div class="sticky top-12 bg-surface-container/30 border border-outline-variant/20 rounded-3xl p-8">
+                <h3 class="text-xl font-serif text-on-surface mb-6">Order Summary</h3>
+                
+                <!-- Items list (condensed) -->
+                <div class="flex flex-col gap-4 mb-6 pb-6 border-b border-outline-variant/20">
+                    
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 rounded-xl bg-surface-container overflow-hidden shrink-0 relative">
+                            <img src="https://images.unsplash.com/photo-1596414086775-3e3215082161?q=80&w=200&auto=format&fit=crop" alt="Item" class="w-full h-full object-cover"/>
+                            <div class="absolute top-0 right-0 bg-on-surface text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-bl-xl">1</div>
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="font-bold text-on-surface text-sm">Organic Linen Sheets</h4>
+                            <p class="text-xs text-on-surface-variant">Sage Green</p>
+                        </div>
+                        <span class="font-sans font-bold text-on-surface">$240.00</span>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 rounded-xl bg-surface-container overflow-hidden shrink-0 relative">
+                            <img src="https://images.unsplash.com/photo-1617260530663-e3af11a91e52?q=80&w=200&auto=format&fit=crop" alt="Item" class="w-full h-full object-cover"/>
+                            <div class="absolute top-0 right-0 bg-on-surface text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-bl-xl">2</div>
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="font-bold text-on-surface text-sm">Artisanal Ceramic Bowl</h4>
+                            <p class="text-xs text-on-surface-variant">Terracotta</p>
+                        </div>
+                        <span class="font-sans font-bold text-on-surface">$90.00</span>
+                    </div>
+
+                </div>
+
+                <!-- Totals -->
+                <div class="flex flex-col gap-3 font-sans text-on-surface-variant mb-6 pb-6 border-b border-outline-variant/20 text-sm">
+                    <div class="flex justify-between">
+                        <span>Subtotal</span>
+                        <span class="font-bold text-on-surface">$330.00</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Shipping</span>
+                        <span class="font-bold text-primary">Free</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Taxes (calculated)</span>
+                        <span class="font-bold text-on-surface">$0.00</span>
+                    </div>
+                    <div class="flex justify-between items-center text-primary bg-primary/10 p-3 rounded-lg mt-2">
+                        <div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">eco</span> Carbon Offset</div>
+                        <span class="font-bold">$2.50</span>
+                    </div>
+                </div>
+                
+                <div class="flex justify-between items-end">
+                    <span class="text-lg font-bold text-on-surface">Total</span>
+                    <div class="text-right">
+                        <span class="text-xs text-on-surface-variant block mb-1">USD</span>
+                        <span class="text-3xl font-serif font-bold text-on-surface">$332.50</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>

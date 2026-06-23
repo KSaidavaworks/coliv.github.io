@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CoLiv | Terms</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#6A7E3F",
+                        secondary: "#4C5C2D",
+                        background: "#fbf9f6",
+                        surface: "#fbf9f6",
+                        "on-surface": "#1b1c1a",
+                        "on-surface-variant": "#424845"
+                    },
+                    fontFamily: {
+                        serif: ["Newsreader", "serif"],
+                        sans: ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Manrope', sans-serif; -webkit-font-smoothing: antialiased; }
+        .font-serif { font-family: 'Newsreader', serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col items-center justify-center p-8 text-center">
+    
+    <span class="material-symbols-outlined text-6xl text-primary mb-6">construction</span>
+    
+    <h1 class="text-5xl font-serif italic mb-4">Terms</h1>
+    
+    <p class="text-on-surface-variant max-w-md mx-auto mb-8 text-lg">
+        This page is currently being designed for the CoLiv platform. Please check back later.
+    </p>
+
+    <button onclick="window.location.href='../holiv_home/code.html'" class="px-8 py-3 bg-primary text-white rounded-full font-bold hover:bg-secondary transition-colors">
+        Return Home
+    </button>
+
+</body>
+</html>

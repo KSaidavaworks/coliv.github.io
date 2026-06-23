@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>CoLiv | Your Cart</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        background: "#fbf9f6",
+                        surface: "#ffffff",
+                        "surface-container": "#efeeeb",
+                        "surface-container-highest": "#e4e2df",
+                        "on-surface": "#1b1c1a",
+                        "on-surface-variant": "#424845",
+                        primary: "#6A7E3F",
+                        "on-primary": "#ffffff",
+                        secondary: "#4C5C2D",
+                        "on-secondary": "#ffffff",
+                        outline: "#727875",
+                        "outline-variant": "#c2c8c4"
+                    },
+                    fontFamily: {
+                        serif: ["Newsreader", "serif"],
+                        sans: ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Manrope', sans-serif; -webkit-font-smoothing: antialiased; }
+        .font-serif { font-family: 'Newsreader', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-slide-up { animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    </style>
+</head>
+<body class="bg-background text-on-surface overflow-x-hidden min-h-screen flex flex-col">
+
+    <!-- Top Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/20">
+        <div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+            <div class="flex items-center gap-2 cursor-pointer" onclick="window.location.href='../holiv_home/code.html'">
+                <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">nature_people</span>
+                <span class="text-2xl font-serif italic text-primary tracking-tight">CoLiv</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-sans tracking-wide text-sm" href="../holiv_home/code.html">Home</a>
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-sans tracking-wide text-sm" href="../marketplace_listing/code.html">Marketplace</a>
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-sans tracking-wide text-sm" href="../sanctuary_discovery/code.html">Sanctuaries</a>
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-sans tracking-wide text-sm" href="../community/code.html">Community</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="material-symbols-outlined p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-all" onclick="alert('Search coming soon!')">search</button>
+                <button class="material-symbols-outlined p-2 bg-primary/10 text-primary rounded-full transition-all">shopping_bag</button>
+                <button class="material-symbols-outlined p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-all" onclick="window.location.href='../user_profile/code.html'">person</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Cart Content -->
+    <main class="flex-grow pt-32 pb-24 px-8 md:px-16 max-w-screen-xl mx-auto w-full animate-slide-up">
+        
+        <h1 class="text-5xl font-serif italic mb-10 text-on-surface">Your Sanctuary Bag</h1>
+        
+        <div class="flex flex-col lg:flex-row gap-12">
+            <!-- Left: Cart Items -->
+            <div class="flex-1">
+                <div class="bg-surface rounded-3xl p-8 shadow-sm border border-outline-variant/30 flex flex-col gap-8">
+                    
+                    <!-- Item 1 -->
+                    <div class="flex gap-6 items-start border-b border-outline-variant/20 pb-8">
+                        <div class="w-32 h-32 rounded-2xl overflow-hidden shrink-0 bg-surface-container">
+                            <img src="https://images.unsplash.com/photo-1596414086775-3e3215082161?q=80&w=600&auto=format&fit=crop" alt="Organic Linen Sheets" class="w-full h-full object-cover"/>
+                        </div>
+                        <div class="flex-grow flex flex-col justify-between h-32">
+                            <div>
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h3 class="text-xl font-serif italic text-on-surface">Organic Linen Sheets</h3>
+                                        <p class="text-sm text-on-surface-variant font-medium mt-1">Aether Linen • Sage Green</p>
+                                    </div>
+                                    <span class="text-xl font-bold font-sans">$240.00</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-end">
+                                <div class="flex items-center bg-surface-container rounded-full px-3 py-1 border border-outline-variant/30">
+                                    <button class="material-symbols-outlined text-sm text-on-surface-variant hover:text-primary" onclick="alert('Decrease quantity')">remove</button>
+                                    <span class="mx-4 font-bold text-sm">1</span>
+                                    <button class="material-symbols-outlined text-sm text-on-surface-variant hover:text-primary" onclick="alert('Increase quantity')">add</button>
+                                </div>
+                                <button class="text-sm font-bold text-on-surface-variant hover:text-red-500 transition-colors underline underline-offset-4" onclick="alert('Removed item')">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="flex gap-6 items-start">
+                        <div class="w-32 h-32 rounded-2xl overflow-hidden shrink-0 bg-surface-container">
+                            <img src="https://images.unsplash.com/photo-1617260530663-e3af11a91e52?q=80&w=600&auto=format&fit=crop" alt="Hand-thrown Ceramic Bowl" class="w-full h-full object-cover"/>
+                        </div>
+                        <div class="flex-grow flex flex-col justify-between h-32">
+                            <div>
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h3 class="text-xl font-serif italic text-on-surface">Artisanal Ceramic Bowl</h3>
+                                        <p class="text-sm text-on-surface-variant font-medium mt-1">Clay & Co. • Terracotta</p>
+                                    </div>
+                                    <span class="text-xl font-bold font-sans">$45.00</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-end">
+                                <div class="flex items-center bg-surface-container rounded-full px-3 py-1 border border-outline-variant/30">
+                                    <button class="material-symbols-outlined text-sm text-on-surface-variant hover:text-primary" onclick="alert('Decrease quantity')">remove</button>
+                                    <span class="mx-4 font-bold text-sm">2</span>
+                                    <button class="material-symbols-outlined text-sm text-on-surface-variant hover:text-primary" onclick="alert('Increase quantity')">add</button>
+                                </div>
+                                <button class="text-sm font-bold text-on-surface-variant hover:text-red-500 transition-colors underline underline-offset-4" onclick="alert('Removed item')">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Right: Order Summary -->
+            <div class="w-full lg:w-96 flex flex-col gap-6">
+                
+                <!-- Summary Card -->
+                <div class="bg-primary/5 rounded-3xl p-8 border border-primary/10">
+                    <h3 class="text-2xl font-serif italic text-on-surface mb-6">Order Summary</h3>
+                    
+                    <div class="flex flex-col gap-4 font-sans text-on-surface-variant mb-6 pb-6 border-b border-outline-variant/20">
+                        <div class="flex justify-between">
+                            <span>Subtotal (3 items)</span>
+                            <span class="font-bold text-on-surface">$330.00</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Conscious Shipping</span>
+                            <span class="font-bold text-primary">Free</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Carbon Offset</span>
+                            <span class="font-bold text-on-surface">$2.50</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-end mb-8">
+                        <span class="text-lg font-bold text-on-surface">Total</span>
+                        <span class="text-3xl font-serif font-bold text-on-surface">$332.50</span>
+                    </div>
+
+                    <button class="w-full py-4 bg-primary text-white rounded-full font-bold text-lg hover:bg-secondary transition-colors shadow-lg shadow-primary/20 hover:-translate-y-1 hover:shadow-xl active:scale-95" onclick="window.location.href='../checkout/code.html'">
+                        Proceed to Checkout
+                    </button>
+                </div>
+
+                <!-- Impact Summary -->
+                <div class="bg-surface rounded-3xl p-6 border border-outline-variant/30 shadow-sm flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                        <span class="material-symbols-outlined">eco</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-on-surface mb-1">Your Purchase Impact</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            This order saves approximately <strong class="text-primary">12kg of CO2</strong> and supports 2 independent artisans compared to conventional alternatives.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface w-full py-12 px-8 border-t border-outline-variant/20 mt-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-screen-2xl mx-auto">
+            <div class="col-span-1 md:col-span-1">
+                <div class="flex items-center gap-2 mb-6">
+                    <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">nature_people</span>
+                    <span class="text-xl font-serif italic text-primary">CoLiv</span>
+                </div>
+                <p class="text-on-surface-variant font-sans text-sm leading-relaxed mb-6">
+                    © 2024 CoLiv. Your Ecosystem for Conscious Living.
+                </p>
+            </div>
+            <div>
+                <h5 class="font-serif italic text-primary mb-6">Discover</h5>
+                <ul class="space-y-4">
+                    <li><a class="text-on-surface-variant hover:text-primary transition-all text-sm" href="../marketplace_listing/code.html">Products</a></li>
+                    <li><a class="text-on-surface-variant hover:text-primary transition-all text-sm" href="../brand_storefront/code.html">Brands</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-serif italic text-primary mb-6">Company</h5>
+                <ul class="space-y-4">
+                    <li><a class="text-on-surface-variant hover:text-primary transition-all text-sm" href="../about/code.html">About</a></li>
+                    <li><a class="text-on-surface-variant hover:text-primary transition-all text-sm" href="../careers/code.html">Careers</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-serif italic text-primary mb-6">Legal</h5>
+                <ul class="space-y-4">
+                    <li><a class="text-on-surface-variant hover:text-primary transition-all text-sm" href="../privacy/code.html">Privacy</a></li>
+                    <li><a class="text-on-surface-variant hover:text-primary transition-all text-sm" href="../terms/code.html">Terms</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

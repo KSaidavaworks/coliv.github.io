@@ -1,10 +1,199 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="refresh" content="0; url='./holiv_home/code.html'" />
-    <title>CoLiv</title>
-  </head>
-  <body>
-    <p>Redirecting to <a href="./holiv_home/code.html">CoLiv Home</a>...</p>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>CoLiv | Loading...</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#3f542d",
+                        secondary: "#7e9063",
+                        tertiary: "#d89c92",
+                    },
+                    fontFamily: {
+                        serif: ["Newsreader", "serif"],
+                        sans: ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { margin: 0; overflow: hidden; background-color: #fbf9f6; }
+        
+        /* Video Background */
+        .video-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translateX(-50%) translateY(-50%);
+            z-index: -2;
+            object-fit: cover;
+            filter: contrast(1.1) brightness(1.2);
+        }
+
+        /* Frosted Glass Overlay */
+        .frosted-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(251, 249, 246, 0.7), rgba(251, 249, 246, 0.5));
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            z-index: -1;
+        }
+
+        /* SVG Animation */
+        .logo-svg {
+            width: 280px;
+            height: 280px;
+            overflow: visible;
+        }
+
+        /* Stroke drawing animation */
+        .draw-path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: draw 2.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+        }
+
+        .draw-path-delay-1 { animation-delay: 0.5s; }
+        .draw-path-delay-2 { animation-delay: 1s; }
+        .draw-path-delay-3 { animation-delay: 1.5s; }
+
+        @keyframes draw {
+            to { stroke-dashoffset: 0; }
+        }
+
+        /* Fill fade-in animation */
+        .fill-fade {
+            fill-opacity: 0;
+            animation: fillFadeIn 1s ease-in forwards;
+            animation-delay: 2.2s;
+        }
+
+        @keyframes fillFadeIn {
+            to { fill-opacity: 1; }
+        }
+
+        /* Text fade-in */
+        .text-fade {
+            opacity: 0;
+            transform: translateY(10px);
+            animation: textFadeIn 1s ease-out forwards;
+            animation-delay: 2.5s;
+        }
+
+        @keyframes textFadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Page transition out */
+        .page-transition {
+            position: fixed;
+            inset: 0;
+            background-color: #fbf9f6;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 100;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .page-transition.active {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen">
+
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline class="video-background">
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-tree-branches-in-the-breeze-1188-large.mp4" type="video/mp4">
+    </video>
+
+    <!-- Frosted Calm Overlay -->
+    <div class="frosted-overlay"></div>
+
+    <!-- Animated Logo -->
+    <div class="relative flex flex-col items-center z-10 drop-shadow-2xl">
+        <svg class="logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="gradGreen" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#3f542d;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#7e9063;stop-color:1" />
+                </linearGradient>
+                <linearGradient id="gradPink" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#b9766d;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#e4aba1;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+
+            <!-- Outer Circle / Environment -->
+            <path class="draw-path" fill="none" stroke="url(#gradGreen)" stroke-width="4" stroke-linecap="round"
+                  d="M 120,185 A 85,85 0 1,1 180,50" />
+            
+            <path class="draw-path" fill="none" stroke="url(#gradPink)" stroke-width="2" stroke-linecap="round"
+                  d="M 115,190 A 90,90 0 1,1 185,45" />
+
+            <!-- Tree Trunk / Stem -->
+            <path class="draw-path draw-path-delay-1 fill-fade" fill="url(#gradGreen)" stroke="url(#gradGreen)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                  d="M 70,175 C 50,140 40,80 80,40 C 70,70 70,120 85,160 C 80,165 75,170 70,175 Z" />
+
+            <!-- Person Reaching Up -->
+            <path class="draw-path draw-path-delay-1 fill-fade" fill="url(#gradGreen)" stroke="url(#gradGreen)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                  d="M 90,120 C 130,130 160,110 145,70 C 140,80 130,90 100,75 C 110,95 110,110 90,120 Z" />
+            
+            <circle class="draw-path draw-path-delay-1 fill-fade" cx="138" cy="65" r="8" fill="none" stroke="url(#gradGreen)" stroke-width="3"/>
+
+            <!-- Leaves (Pink / Green) -->
+            <!-- Top Pink Leaf -->
+            <path class="draw-path draw-path-delay-2 fill-fade" fill="url(#gradPink)" stroke="url(#gradPink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                  d="M 80,40 C 85,15 110,15 130,30 C 110,40 90,40 80,40 Z" />
+            
+            <!-- Left Pink Leaf -->
+            <path class="draw-path draw-path-delay-2 fill-fade" fill="url(#gradPink)" stroke="url(#gradPink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                  d="M 72,55 C 45,45 40,20 50,10 C 65,25 70,40 72,55 Z" />
+            
+            <!-- Right Small Pink Leaf -->
+            <path class="draw-path draw-path-delay-3 fill-fade" fill="url(#gradPink)" stroke="url(#gradPink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  d="M 105,50 C 120,45 135,50 140,65 C 125,60 115,55 105,50 Z" />
+        </svg>
+
+        <!-- Typography -->
+        <div class="text-fade text-center mt-4">
+            <h1 class="text-6xl font-serif text-[#3f542d] font-bold tracking-tight mb-2">CoLiv</h1>
+            <p class="text-sm font-sans font-bold uppercase tracking-[0.2em] text-[#3f542d]/80">
+                Your Ecosystem for Conscious Living
+            </p>
+        </div>
+    </div>
+
+    <!-- Transition overlay for smooth redirect -->
+    <div class="page-transition" id="transition"></div>
+
+    <script>
+        // Redirect logic
+        window.addEventListener('DOMContentLoaded', () => {
+            const transitionEl = document.getElementById('transition');
+            
+            // Wait 5 seconds for the full animation to complete, then start transition out
+            setTimeout(() => {
+                transitionEl.classList.add('active');
+                
+                // Once transition out is done (1s), redirect to the homepage
+                setTimeout(() => {
+                    window.location.href = './holiv_home/code.html';
+                }, 1000);
+            }, 4500);
+        });
+    </script>
+</body>
 </html>

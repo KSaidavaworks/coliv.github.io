@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>CoLiv | About Us</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        background: "#fbf9f6",
+                        surface: "#ffffff",
+                        "surface-container": "#efeeeb",
+                        "surface-container-highest": "#e4e2df",
+                        "on-surface": "#1b1c1a",
+                        "on-surface-variant": "#424845",
+                        primary: "#6A7E3F",
+                        secondary: "#4C5C2D",
+                        outline: "#727875",
+                        "outline-variant": "#c2c8c4"
+                    },
+                    fontFamily: {
+                        serif: ["Newsreader", "serif"],
+                        sans: ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Manrope', sans-serif; -webkit-font-smoothing: antialiased; }
+        .font-serif { font-family: 'Newsreader', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .reveal { animation: fadeIn 0.8s ease-out forwards; opacity: 0; }
+    </style>
+</head>
+<body class="bg-background text-on-surface overflow-x-hidden min-h-screen flex flex-col">
+
+    <!-- Top Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/20">
+        <div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+            <div class="flex items-center gap-2 cursor-pointer" onclick="window.location.href='../holiv_home/code.html'">
+                <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">nature_people</span>
+                <span class="text-2xl font-serif italic text-primary tracking-tight">CoLiv</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-sans tracking-wide text-sm" href="../holiv_home/code.html">Home</a>
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-sans tracking-wide text-sm" href="../marketplace_listing/code.html">Marketplace</a>
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-sans tracking-wide text-sm" href="../sanctuary_discovery/code.html">Sanctuaries</a>
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-sans tracking-wide text-sm" href="../community/code.html">Community</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="material-symbols-outlined p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-all" onclick="alert('Search coming soon!')">search</button>
+                <button class="material-symbols-outlined p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-all" onclick="window.location.href='../cart/code.html'">shopping_bag</button>
+                <button class="material-symbols-outlined p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-all" onclick="window.location.href='../user_profile/code.html'">person</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 px-8 md:px-16 max-w-screen-xl mx-auto w-full text-center reveal" style="animation-delay: 0.1s;">
+        <h1 class="text-5xl md:text-7xl font-serif italic text-on-surface mb-6">Our Story</h1>
+        <p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl mx-auto font-body leading-relaxed">
+            CoLiv was born from a simple belief: the products we bring into our sanctuaries should nurture both our wellbeing and the planet.
+        </p>
+    </section>
+
+    <!-- Large Editorial Image -->
+    <section class="px-4 md:px-8 mb-24 reveal" style="animation-delay: 0.3s;">
+        <div class="w-full max-w-screen-2xl mx-auto h-[600px] rounded-[3rem] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Sustainable Living Space"/>
+        </div>
+    </section>
+
+    <!-- The Mission -->
+    <section class="py-16 px-8 md:px-16 bg-surface mb-24">
+        <div class="max-w-4xl mx-auto text-center reveal">
+            <h2 class="text-sm font-bold uppercase tracking-widest text-primary mb-4">The Mission</h2>
+            <p class="text-3xl md:text-4xl font-serif text-on-surface leading-normal">
+                "To create a centralized ecosystem where conscious consumers and ethical artisans can connect, transforming how we define luxury and purposeful living."
+            </p>
+        </div>
+    </section>
+
+    <!-- Core Values (Bento Grid) -->
+    <section class="py-16 px-8 md:px-16 max-w-screen-xl mx-auto mb-24">
+        <h2 class="text-4xl font-serif italic text-on-surface mb-12 text-center reveal">Our Core Pillars</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Value 1 -->
+            <div class="bg-surface-container/50 rounded-3xl p-10 border border-outline-variant/30 reveal">
+                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6">
+                    <span class="material-symbols-outlined text-3xl">eco</span>
+                </div>
+                <h3 class="text-2xl font-serif text-on-surface mb-4">Radical Transparency</h3>
+                <p class="text-on-surface-variant leading-relaxed font-medium">
+                    Every product on CoLiv comes with an Impact Passport. We trace materials, labor, and environmental cost so you don't have to guess.
+                </p>
+            </div>
+            
+            <!-- Value 2 -->
+            <div class="bg-surface-container/50 rounded-3xl p-10 border border-outline-variant/30 reveal" style="animation-delay: 0.2s;">
+                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6">
+                    <span class="material-symbols-outlined text-3xl">handshake</span>
+                </div>
+                <h3 class="text-2xl font-serif text-on-surface mb-4">Empowering Artisans</h3>
+                <p class="text-on-surface-variant leading-relaxed font-medium">
+                    We take 0% commission from small, independent makers who meet our highest sustainability criteria. Your purchase directly supports their craft.
+                </p>
+            </div>
+            
+            <!-- Value 3 -->
+            <div class="bg-surface-container/50 rounded-3xl p-10 border border-outline-variant/30 reveal" style="animation-delay: 0.4s;">
+                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6">
+                    <span class="material-symbols-outlined text-3xl">diversity_1</span>
+                </div>
+                <h3 class="text-2xl font-serif text-on-surface mb-4">Collective Impact</h3>
+                <p class="text-on-surface-variant leading-relaxed font-medium">
+                    It's not just a marketplace; it's a movement. Our community features allow you to share knowledge, attend workshops, and grow together.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join CTA -->
+    <section class="py-24 px-8 md:px-16 reveal">
+        <div class="max-w-screen-xl mx-auto bg-primary rounded-[3rem] p-12 md:p-24 relative overflow-hidden text-center flex flex-col items-center">
+            <div class="absolute inset-0 opacity-10 pointer-events-none">
+                <div class="w-full h-full bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
+            </div>
+            <h2 class="text-5xl font-serif italic text-white mb-6 relative z-10">Build the future with us.</h2>
+            <p class="text-white/80 text-xl max-w-2xl mb-10 font-body relative z-10">
+                Whether you're an artisan looking for a platform or a consumer seeking a sanctuary, there's a place for you here.
+            </p>
+            <div class="flex gap-6 relative z-10">
+                <button class="px-10 py-4 bg-white text-primary rounded-full font-bold text-lg hover:bg-surface-container transition-all active:scale-95 shadow-xl shadow-black/10" onclick="window.location.href='../signup/code.html'">
+                    Join the Community
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-surface w-full py-12 px-8 border-t border-outline-variant/20 mt-auto">
+        <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">nature_people</span>
+                <span class="text-lg font-serif italic text-primary">CoLiv</span>
+            </div>
+            <p class="text-on-surface-variant font-sans text-xs">© 2024 CoLiv. Your Ecosystem for Conscious Living.</p>
+            <div class="flex gap-4">
+                <a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="../privacy/code.html">Privacy</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="../terms/code.html">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.animationName = "fadeIn";
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
